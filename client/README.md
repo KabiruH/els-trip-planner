@@ -1,70 +1,258 @@
-# Getting Started with Create React App
+# ELD Trip Planner - Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern React application providing a professional Electronic Logging Device interface for truck drivers.
 
-## Available Scripts
+## 🛠️ Technology Stack
 
-In the project directory, you can run:
+- **React 18** - Modern React with hooks and functional components
+- **Material-UI (MUI) 5** - Professional component library
+- **React Router 6** - Client-side routing
+- **Leaflet** - Interactive maps for route planning
+- **Axios** - HTTP client for API communication
 
-### `npm start`
+## 📁 Project Structure
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```
+src/
+├── components/           # Reusable UI components
+│   ├── auth/            # Authentication components
+│   │   └── LoginForm.js
+│   └── common/          # Shared components
+│       ├── Layout.js
+│       └── Sidebar.js
+├── pages/               # Page components
+│   ├── Login.js         # Login page
+│   ├── Dashboard.js     # Main dashboard
+│   ├── NewTrip.js       # Trip creation
+│   ├── TripDetails.js   # Trip details view
+│   └── TripHistory.js   # Trip history
+├── services/            # API services
+│   └── api.js          # API client and services
+├── App.js              # Main application component
+├── App.css             # Global styles
+└── index.js            # Application entry point
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🚀 Getting Started
 
-### `npm test`
+### Prerequisites
+- Node.js 16 or higher
+- npm or yarn package manager
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Installation
 
-### `npm run build`
+1. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. **Set up environment variables**
+   Create a `.env` file in the root directory:
+   ```env
+   REACT_APP_API_URL=http://localhost:8000
+   REACT_APP_API_VERSION=v1
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. **Start development server**
+   ```bash
+   npm start
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4. **Open your browser**
+   Navigate to http://localhost:3000
 
-### `npm run eject`
+## 📱 Features
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Authentication System
+- **Secure Login**: JWT-based authentication
+- **Session Management**: Automatic token handling
+- **Protected Routes**: Route guards for authenticated pages
+- **Logout Functionality**: Clean session termination
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Professional UI Design
+- **Minimalist Blue Theme**: Professional, clean interface
+- **Full-page Layout**: Modern, immersive design
+- **Material-UI Components**: Consistent, accessible UI
+- **Responsive Design**: Works on desktop and mobile
+- **Glassmorphism Effects**: Modern visual styling
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Navigation
+- **Sidebar Navigation**: Professional driver interface
+- **Route-based Navigation**: Clean URL structure
+- **Mobile-friendly**: Collapsible sidebar for mobile
+- **Active State Indicators**: Clear navigation feedback
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Driver Dashboard
+- **Real-time Status**: Current duty status display
+- **Quick Actions**: Easy access to common tasks
+- **Trip Overview**: Current and recent trip information
+- **Professional Layout**: Clean, organized interface
 
-## Learn More
+### Trip Management
+- **Trip Planning**: Interactive route planning
+- **Trip History**: View past trips and logs
+- **Trip Details**: Detailed trip information
+- **HOS Compliance**: Hours of Service tracking
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🔧 Configuration
 
-### Code Splitting
+### Environment Variables
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```env
+# API Configuration
+REACT_APP_API_URL=http://localhost:8000
+REACT_APP_API_VERSION=v1
 
-### Analyzing the Bundle Size
+# Feature Flags
+REACT_APP_ENABLE_MAPS=true
+REACT_APP_DEBUG_MODE=false
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Build Configuration
 
-### Making a Progressive Web App
+The application uses Create React App with default configuration. Custom webpack configuration can be added using CRACO if needed.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 📡 API Integration
 
-### Advanced Configuration
+### Service Architecture
+```javascript
+// services/api.js structure
+export const authService = {
+  login,
+  logout,
+  isAuthenticated,
+  getCurrentUser
+};
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+export const driverService = {
+  getProfile,
+  updateProfile
+};
 
-### Deployment
+export const tripService = {
+  createTrip,
+  getTrips,
+  getTripDetails
+};
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Authentication Flow
+1. User enters credentials on login page
+2. Frontend sends request to Django backend
+3. Backend returns JWT token and user data
+4. Frontend stores token and redirects to dashboard
+5. All subsequent requests include JWT token
 
-### `npm run build` fails to minify
+### Error Handling
+- Global error boundary for React errors
+- API error formatting and user-friendly messages
+- Network error handling with retry logic
+- Form validation with real-time feedback
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 📦 Build and Deployment
+
+### Development Build
+```bash
+npm start
+```
+
+### Production Build
+```bash
+npm run build
+```
+
+### Build Optimization
+- Code splitting for optimal loading
+- Asset optimization and compression
+- Bundle analysis with webpack-bundle-analyzer
+- Progressive Web App features
+
+### Deployment Options
+- **Netlify**: Automatic deployment from Git
+- **Vercel**: Serverless deployment
+- **AWS S3 + CloudFront**: Static hosting
+- **Docker**: Containerized deployment
+
+## 🔍 Performance
+
+### Optimization Features
+- **Code Splitting**: Route-based code splitting
+- **Lazy Loading**: Components loaded on demand
+- **Memoization**: React.memo for expensive components
+- **Virtual Scrolling**: For large lists (if needed)
+
+### Bundle Analysis
+```bash
+npm run build
+npx webpack-bundle-analyzer build/static/js/*.js
+```
+
+## 🐛 Debugging
+
+### Development Tools
+- React Developer Tools browser extension
+- Redux DevTools (if Redux is added)
+- Browser debugger with source maps
+- Console logging with debug levels
+
+### Common Issues
+- **CORS Errors**: Ensure backend allows frontend origin
+- **Token Expiry**: Check token refresh logic
+- **Route Issues**: Verify React Router configuration
+- **API Errors**: Check network tab for API responses
+
+## 🔒 Security
+
+### Security Measures
+- **JWT Token Storage**: Secure token handling
+- **XSS Protection**: Sanitized user inputs
+- **CSRF Protection**: API token-based protection
+- **Route Protection**: Authentication guards
+- **Input Validation**: Client-side validation
+
+## 📱 Mobile Support
+
+### Responsive Features
+- **Mobile-first Design**: Optimized for mobile devices
+- **Touch Interactions**: Mobile-friendly controls
+- **Sidebar Collapse**: Drawer navigation for mobile
+- **Viewport Optimization**: Proper mobile viewport handling
+
+## 🤝 Contributing
+
+### Development Setup
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests for new features
+5. Ensure all tests pass
+6. Submit a pull request
+
+### Code Style
+- **ESLint**: Code linting and formatting
+- **Prettier**: Code formatting
+- **Husky**: Git hooks for quality checks
+- **Component Naming**: PascalCase for components
+
+## 📄 Dependencies
+
+### Core Dependencies
+```json
+{
+  "react": "^18.0.0",
+  "@mui/material": "^5.0.0",
+  "react-router-dom": "^6.0.0",
+  "axios": "^1.0.0",
+  "leaflet": "^1.9.0"
+}
+```
+
+### Development Dependencies
+```json
+{
+  "@testing-library/react": "^13.0.0",
+  "eslint": "^8.0.0",
+  "prettier": "^2.0.0"
+}
+```

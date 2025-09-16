@@ -2196,3 +2196,1484 @@ INFO 2025-09-16 02:38:35,065 autoreload 11588 20104 E:\source\repos\GitHub\els-t
 INFO 2025-09-16 02:38:35,881 autoreload 16948 16892 Watching for file changes with StatReloader
 INFO 2025-09-16 02:39:50,346 autoreload 16948 16892 E:\source\repos\GitHub\els-trip-planner\server\drivers\views.py changed, reloading.
 INFO 2025-09-16 02:39:51,787 autoreload 8684 15776 Watching for file changes with StatReloader
+INFO 2025-09-16 02:40:02,525 basehttp 8684 15088 "OPTIONS /api/v1/logs/daily/today/ HTTP/1.1" 200 0
+INFO 2025-09-16 02:40:02,525 basehttp 8684 19584 "OPTIONS /api/v1/drivers/hos_status/ HTTP/1.1" 200 0
+INFO 2025-09-16 02:40:02,525 basehttp 8684 15088 "OPTIONS /api/v1/logs/daily/today/ HTTP/1.1" 200 0
+INFO 2025-09-16 02:40:02,525 basehttp 8684 19584 "OPTIONS /api/v1/drivers/hos_status/ HTTP/1.1" 200 0
+INFO 2025-09-16 02:40:02,557 basehttp 8684 4200 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 224
+INFO 2025-09-16 02:40:02,558 basehttp 8684 5588 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 224
+INFO 2025-09-16 02:40:02,558 basehttp 8684 15088 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 336
+INFO 2025-09-16 02:40:02,558 basehttp 8684 17808 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:40:02,559 basehttp 8684 19720 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:40:02,576 basehttp 8684 19584 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 627
+INFO 2025-09-16 02:40:02,581 basehttp 8684 5588 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 336
+INFO 2025-09-16 02:40:02,591 basehttp 8684 4200 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 627
+INFO 2025-09-16 02:40:02,860 basehttp 8684 19584 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 336
+INFO 2025-09-16 02:40:02,911 basehttp 8684 4200 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 627
+INFO 2025-09-16 02:40:02,927 basehttp 8684 15088 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 336
+INFO 2025-09-16 02:40:02,946 basehttp 8684 19584 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 627
+INFO 2025-09-16 02:40:02,946 basehttp 8684 17808 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 627
+INFO 2025-09-16 02:40:02,954 basehttp 8684 5588 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1208
+INFO 2025-09-16 02:40:02,956 basehttp 8684 19720 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1208
+INFO 2025-09-16 02:40:02,959 basehttp 8684 15088 "OPTIONS /api/v1/logs/daily/hos_summary/ HTTP/1.1" 200 0
+INFO 2025-09-16 02:40:02,962 basehttp 8684 19584 "OPTIONS /api/v1/logs/daily/hos_summary/ HTTP/1.1" 200 0
+INFO 2025-09-16 02:40:02,976 basehttp 8684 4200 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 627
+INFO 2025-09-16 02:40:02,989 basehttp 8684 5588 "GET /api/v1/logs/daily/hos_summary/ HTTP/1.1" 200 319
+INFO 2025-09-16 02:40:02,989 basehttp 8684 19720 "GET /api/v1/logs/daily/hos_summary/ HTTP/1.1" 200 319
+INFO 2025-09-16 02:40:11,783 basehttp 8684 5588 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:40:11,800 basehttp 8684 19720 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:40:11,800 basehttp 8684 5588 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 336
+INFO 2025-09-16 02:40:11,815 basehttp 8684 17808 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:40:11,815 basehttp 8684 19584 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 336
+INFO 2025-09-16 02:40:11,831 basehttp 8684 4200 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1208
+INFO 2025-09-16 02:40:11,831 basehttp 8684 19720 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1208
+INFO 2025-09-16 02:40:11,987 basehttp 8684 5588 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1208
+INFO 2025-09-16 02:40:11,987 basehttp 8684 4200 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1208
+INFO 2025-09-16 02:40:13,623 basehttp 8684 19720 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:40:13,639 basehttp 8684 5588 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 224
+INFO 2025-09-16 02:40:13,655 basehttp 8684 17808 "GET /api/v1/trips/ HTTP/1.1" 200 1258
+INFO 2025-09-16 02:40:13,670 basehttp 8684 17808 "GET /api/v1/trips/ HTTP/1.1" 200 1258
+INFO 2025-09-16 02:40:13,670 basehttp 8684 4200 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 224
+INFO 2025-09-16 02:40:13,780 basehttp 8684 17808 "GET /api/v1/trips/ HTTP/1.1" 200 1258
+INFO 2025-09-16 02:40:13,796 basehttp 8684 19720 "GET /api/v1/trips/ HTTP/1.1" 200 1258
+INFO 2025-09-16 02:40:20,744 basehttp 8684 17808 "OPTIONS /api/v1/trips/f5147079-66de-4a58-b6bf-86709487566a/ HTTP/1.1" 200 0
+INFO 2025-09-16 02:40:20,776 basehttp 8684 19720 "DELETE /api/v1/trips/f5147079-66de-4a58-b6bf-86709487566a/ HTTP/1.1" 204 0
+WARNING 2025-09-16 02:40:20,807 log 8684 17808 Not Found: /api/v1/trips/f5147079-66de-4a58-b6bf-86709487566a/
+WARNING 2025-09-16 02:40:20,807 basehttp 8684 17808 "DELETE /api/v1/trips/f5147079-66de-4a58-b6bf-86709487566a/ HTTP/1.1" 404 45
+INFO 2025-09-16 02:40:24,672 basehttp 8684 19720 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:40:24,688 basehttp 8684 17808 "GET /api/v1/trips/ HTTP/1.1" 200 52
+INFO 2025-09-16 02:40:24,704 basehttp 8684 19584 "GET /api/v1/trips/ HTTP/1.1" 200 52
+INFO 2025-09-16 02:40:24,704 basehttp 8684 4200 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:40:24,704 basehttp 8684 5588 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 224
+INFO 2025-09-16 02:40:24,704 basehttp 8684 15088 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 224
+INFO 2025-09-16 02:40:24,908 basehttp 8684 19720 "GET /api/v1/trips/ HTTP/1.1" 200 52
+INFO 2025-09-16 02:40:24,908 basehttp 8684 17808 "GET /api/v1/trips/ HTTP/1.1" 200 52
+INFO 2025-09-16 02:40:26,909 basehttp 8684 17808 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:40:26,909 basehttp 8684 19720 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:40:26,940 basehttp 8684 17808 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 321
+INFO 2025-09-16 02:40:26,946 basehttp 8684 5588 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 2
+INFO 2025-09-16 02:40:26,946 basehttp 8684 19720 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:40:26,946 basehttp 8684 19584 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 2
+INFO 2025-09-16 02:40:26,946 basehttp 8684 4200 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 321
+INFO 2025-09-16 02:40:27,066 basehttp 8684 17808 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 2
+INFO 2025-09-16 02:40:27,066 basehttp 8684 19720 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 2
+INFO 2025-09-16 02:40:29,748 basehttp 8684 17808 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:40:29,764 basehttp 8684 19584 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 321
+INFO 2025-09-16 02:40:29,764 basehttp 8684 5588 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 321
+INFO 2025-09-16 02:40:29,780 basehttp 8684 15088 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 627
+INFO 2025-09-16 02:40:29,780 basehttp 8684 19720 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 224
+INFO 2025-09-16 02:40:29,780 basehttp 8684 4200 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 224
+INFO 2025-09-16 02:40:29,780 basehttp 8684 16680 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 627
+INFO 2025-09-16 02:40:29,905 basehttp 8684 17808 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 321
+INFO 2025-09-16 02:40:29,936 basehttp 8684 19720 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 627
+INFO 2025-09-16 02:40:29,952 basehttp 8684 17808 "GET /api/v1/logs/daily/hos_summary/ HTTP/1.1" 200 319
+INFO 2025-09-16 02:40:29,955 basehttp 8684 19584 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 321
+INFO 2025-09-16 02:40:29,968 basehttp 8684 5588 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 2
+INFO 2025-09-16 02:40:29,968 basehttp 8684 15088 "GET /api/v1/logs/daily/hos_summary/ HTTP/1.1" 200 319
+INFO 2025-09-16 02:40:29,968 basehttp 8684 4200 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 627
+INFO 2025-09-16 02:40:29,968 basehttp 8684 16680 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 627
+INFO 2025-09-16 02:40:29,984 basehttp 8684 17808 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 627
+INFO 2025-09-16 02:40:29,984 basehttp 8684 19720 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 2
+INFO 2025-09-16 02:40:43,875 basehttp 8684 17808 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:40:43,875 basehttp 8684 19720 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:40:43,890 basehttp 8684 15088 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 321
+INFO 2025-09-16 02:40:43,890 basehttp 8684 4200 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 2
+INFO 2025-09-16 02:40:43,890 basehttp 8684 19584 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:40:43,890 basehttp 8684 16680 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 2
+INFO 2025-09-16 02:40:43,890 basehttp 8684 5588 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 321
+INFO 2025-09-16 02:40:44,019 basehttp 8684 17808 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 2
+INFO 2025-09-16 02:40:44,032 basehttp 8684 19720 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 2
+INFO 2025-09-16 02:40:51,654 basehttp 8684 17808 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:40:51,674 basehttp 8684 17808 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 321
+INFO 2025-09-16 02:40:51,689 basehttp 8684 19584 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 627
+INFO 2025-09-16 02:40:51,689 basehttp 8684 15088 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 321
+INFO 2025-09-16 02:40:51,689 basehttp 8684 5588 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 224
+INFO 2025-09-16 02:40:51,705 basehttp 8684 4200 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 627
+INFO 2025-09-16 02:40:51,705 basehttp 8684 19720 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 224
+INFO 2025-09-16 02:40:51,815 basehttp 8684 17808 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 321
+INFO 2025-09-16 02:40:51,855 basehttp 8684 17808 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 627
+INFO 2025-09-16 02:40:51,855 basehttp 8684 4200 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 627
+INFO 2025-09-16 02:40:51,855 basehttp 8684 16680 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 321
+INFO 2025-09-16 02:40:51,855 basehttp 8684 5588 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 2
+INFO 2025-09-16 02:40:51,862 basehttp 8684 19720 "GET /api/v1/logs/daily/hos_summary/ HTTP/1.1" 200 319
+INFO 2025-09-16 02:40:51,862 basehttp 8684 15088 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 627
+INFO 2025-09-16 02:40:51,862 basehttp 8684 19584 "GET /api/v1/logs/daily/hos_summary/ HTTP/1.1" 200 319
+INFO 2025-09-16 02:40:51,862 basehttp 8684 17808 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 2
+INFO 2025-09-16 02:40:51,878 basehttp 8684 4200 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 627
+INFO 2025-09-16 02:40:55,157 basehttp 8684 19720 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:40:55,157 basehttp 8684 17808 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:40:55,176 basehttp 8684 16680 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:40:55,176 basehttp 8684 5588 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 321
+INFO 2025-09-16 02:40:55,178 basehttp 8684 19584 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 2
+INFO 2025-09-16 02:40:55,178 basehttp 8684 15088 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 321
+INFO 2025-09-16 02:40:55,178 basehttp 8684 4200 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 2
+INFO 2025-09-16 02:40:55,264 basehttp 8684 17808 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 2
+INFO 2025-09-16 02:40:55,265 basehttp 8684 19720 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 2
+INFO 2025-09-16 02:42:21,441 basehttp 8684 17808 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:42:21,446 basehttp 8684 16680 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 321
+INFO 2025-09-16 02:42:21,461 basehttp 8684 4200 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 321
+INFO 2025-09-16 02:42:21,461 basehttp 8684 19584 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 627
+INFO 2025-09-16 02:42:21,461 basehttp 8684 15088 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 627
+INFO 2025-09-16 02:42:21,477 basehttp 8684 5588 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 224
+INFO 2025-09-16 02:42:21,477 basehttp 8684 19720 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 224
+INFO 2025-09-16 02:42:21,602 basehttp 8684 17808 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 321
+INFO 2025-09-16 02:42:21,618 basehttp 8684 19720 "GET /api/v1/logs/daily/hos_summary/ HTTP/1.1" 200 319
+INFO 2025-09-16 02:42:21,650 basehttp 8684 5588 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 2
+INFO 2025-09-16 02:42:21,665 basehttp 8684 17808 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 627
+INFO 2025-09-16 02:42:21,665 basehttp 8684 16680 "GET /api/v1/logs/daily/hos_summary/ HTTP/1.1" 200 319
+INFO 2025-09-16 02:42:21,665 basehttp 8684 19720 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 321
+INFO 2025-09-16 02:42:21,665 basehttp 8684 15088 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 2
+INFO 2025-09-16 02:42:21,681 basehttp 8684 19584 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 627
+INFO 2025-09-16 02:42:21,681 basehttp 8684 4200 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 627
+INFO 2025-09-16 02:42:21,697 basehttp 8684 17808 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 627
+INFO 2025-09-16 02:42:33,477 basehttp 8684 4200 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 2
+INFO 2025-09-16 02:42:33,492 basehttp 8684 17808 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:42:33,492 basehttp 8684 16680 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:42:33,492 basehttp 8684 19584 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 2
+INFO 2025-09-16 02:42:33,508 basehttp 8684 19720 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:42:33,508 basehttp 8684 5588 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 321
+INFO 2025-09-16 02:42:33,508 basehttp 8684 15088 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 321
+INFO 2025-09-16 02:42:33,617 basehttp 8684 17808 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 2
+INFO 2025-09-16 02:42:33,633 basehttp 8684 19720 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 2
+INFO 2025-09-16 02:42:37,577 basehttp 8684 19720 "GET /api/v1/trips/ HTTP/1.1" 200 52
+INFO 2025-09-16 02:42:37,593 basehttp 8684 4200 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 224
+INFO 2025-09-16 02:42:37,593 basehttp 8684 17808 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:42:37,593 basehttp 8684 19720 "GET /api/v1/trips/ HTTP/1.1" 200 52
+INFO 2025-09-16 02:42:37,609 basehttp 8684 17808 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 224
+INFO 2025-09-16 02:42:37,718 basehttp 8684 17808 "GET /api/v1/trips/ HTTP/1.1" 200 52
+INFO 2025-09-16 02:42:37,718 basehttp 8684 19720 "GET /api/v1/trips/ HTTP/1.1" 200 52
+INFO 2025-09-16 02:42:39,477 basehttp 8684 17808 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:42:41,203 basehttp 8684 19720 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:42:41,219 basehttp 8684 17808 "GET /api/v1/trips/ HTTP/1.1" 200 52
+INFO 2025-09-16 02:42:41,234 basehttp 8684 16680 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 224
+INFO 2025-09-16 02:42:41,234 basehttp 8684 5588 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 224
+INFO 2025-09-16 02:42:41,234 basehttp 8684 4200 "GET /api/v1/trips/ HTTP/1.1" 200 52
+INFO 2025-09-16 02:42:41,329 basehttp 8684 19720 "GET /api/v1/trips/ HTTP/1.1" 200 52
+INFO 2025-09-16 02:42:41,344 basehttp 8684 17808 "GET /api/v1/trips/ HTTP/1.1" 200 52
+INFO 2025-09-16 02:42:42,116 basehttp 8684 19720 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:42:42,116 basehttp 8684 5588 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:42:42,116 basehttp 8684 17808 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:42:42,132 basehttp 8684 19584 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 2
+INFO 2025-09-16 02:42:42,132 basehttp 8684 15088 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 321
+INFO 2025-09-16 02:42:42,132 basehttp 8684 4200 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 321
+INFO 2025-09-16 02:42:42,132 basehttp 8684 16680 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 2
+INFO 2025-09-16 02:42:42,241 basehttp 8684 19720 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 2
+INFO 2025-09-16 02:42:42,241 basehttp 8684 17808 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 2
+INFO 2025-09-16 02:43:24,490 basehttp 8684 19720 "POST /api/v1/trips/plan/ HTTP/1.1" 201 1992
+INFO 2025-09-16 02:43:24,594 basehttp 8684 19720 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:43:28,200 basehttp 8684 19720 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:43:28,212 basehttp 8684 17808 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:43:28,220 basehttp 8684 5588 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 336
+INFO 2025-09-16 02:43:28,224 basehttp 8684 4200 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:43:28,228 basehttp 8684 15088 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 336
+INFO 2025-09-16 02:43:28,236 basehttp 8684 19584 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1228
+INFO 2025-09-16 02:43:28,244 basehttp 8684 19720 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1228
+INFO 2025-09-16 02:43:28,364 basehttp 8684 17808 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1228
+INFO 2025-09-16 02:43:28,376 basehttp 8684 19720 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1228
+INFO 2025-09-16 02:43:32,254 basehttp 8684 19720 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:43:32,270 basehttp 8684 19584 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 224
+INFO 2025-09-16 02:43:32,272 basehttp 8684 5588 "GET /api/v1/trips/ HTTP/1.1" 200 1278
+INFO 2025-09-16 02:43:32,281 basehttp 8684 4200 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 224
+INFO 2025-09-16 02:43:32,284 basehttp 8684 17808 "GET /api/v1/trips/ HTTP/1.1" 200 1278
+INFO 2025-09-16 02:43:32,460 basehttp 8684 19720 "GET /api/v1/trips/ HTTP/1.1" 200 1278
+INFO 2025-09-16 02:43:32,463 basehttp 8684 5588 "GET /api/v1/trips/ HTTP/1.1" 200 1278
+INFO 2025-09-16 02:43:53,441 basehttp 8684 17808 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:43:53,457 basehttp 8684 4200 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:43:53,457 basehttp 8684 5588 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 336
+INFO 2025-09-16 02:43:53,457 basehttp 8684 19720 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:43:53,473 basehttp 8684 16680 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 336
+INFO 2025-09-16 02:43:53,473 basehttp 8684 15088 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1228
+INFO 2025-09-16 02:43:53,473 basehttp 8684 19584 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1228
+INFO 2025-09-16 02:43:53,598 basehttp 8684 19720 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1228
+INFO 2025-09-16 02:43:53,598 basehttp 8684 17808 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1228
+INFO 2025-09-16 02:44:02,576 basehttp 8684 19720 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1228
+INFO 2025-09-16 02:44:02,576 basehttp 8684 5588 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1228
+INFO 2025-09-16 02:44:09,725 basehttp 8684 19720 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:44:09,740 basehttp 8684 19584 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 336
+INFO 2025-09-16 02:44:09,756 basehttp 8684 17808 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 336
+INFO 2025-09-16 02:44:09,756 basehttp 8684 5588 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 224
+INFO 2025-09-16 02:44:09,756 basehttp 8684 16680 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 627
+INFO 2025-09-16 02:44:09,756 basehttp 8684 15088 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 224
+INFO 2025-09-16 02:44:09,756 basehttp 8684 4200 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 627
+INFO 2025-09-16 02:44:09,850 basehttp 8684 19720 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 336
+INFO 2025-09-16 02:44:09,866 basehttp 8684 17808 "GET /api/v1/logs/daily/hos_summary/ HTTP/1.1" 200 319
+INFO 2025-09-16 02:44:09,882 basehttp 8684 19720 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 627
+INFO 2025-09-16 02:44:09,913 basehttp 8684 15088 "GET /api/v1/logs/daily/hos_summary/ HTTP/1.1" 200 319
+INFO 2025-09-16 02:44:09,913 basehttp 8684 5588 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1228
+INFO 2025-09-16 02:44:09,913 basehttp 8684 19584 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 336
+INFO 2025-09-16 02:44:09,928 basehttp 8684 4200 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 627
+INFO 2025-09-16 02:44:09,928 basehttp 8684 16680 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1228
+INFO 2025-09-16 02:44:09,928 basehttp 8684 17808 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 627
+INFO 2025-09-16 02:44:09,944 basehttp 8684 19720 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 627
+INFO 2025-09-16 02:44:12,114 basehttp 8684 19720 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:44:12,114 basehttp 8684 17808 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 336
+INFO 2025-09-16 02:44:12,130 basehttp 8684 19584 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:44:12,130 basehttp 8684 5588 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:44:12,146 basehttp 8684 4200 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1228
+INFO 2025-09-16 02:44:12,146 basehttp 8684 16680 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 336
+INFO 2025-09-16 02:44:12,146 basehttp 8684 15088 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1228
+INFO 2025-09-16 02:44:12,256 basehttp 8684 19720 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1228
+INFO 2025-09-16 02:44:12,256 basehttp 8684 17808 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1228
+INFO 2025-09-16 02:45:10,604 basehttp 8684 19720 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:45:10,620 basehttp 8684 17808 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 224
+INFO 2025-09-16 02:45:10,620 basehttp 8684 5588 "GET /api/v1/trips/ HTTP/1.1" 200 1278
+INFO 2025-09-16 02:45:10,652 basehttp 8684 19720 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 224
+INFO 2025-09-16 02:45:10,669 basehttp 8684 17808 "GET /api/v1/trips/ HTTP/1.1" 200 1278
+INFO 2025-09-16 02:45:10,934 basehttp 8684 19720 "GET /api/v1/trips/ HTTP/1.1" 200 1278
+INFO 2025-09-16 02:45:10,934 basehttp 8684 5588 "GET /api/v1/trips/ HTTP/1.1" 200 1278
+INFO 2025-09-16 02:48:35,166 basehttp 8684 20028 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:48:35,178 basehttp 8684 17544 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:48:35,190 basehttp 8684 9400 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:48:35,194 basehttp 8684 9784 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 336
+INFO 2025-09-16 02:48:35,218 basehttp 8684 19648 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1228
+INFO 2025-09-16 02:48:35,218 basehttp 8684 18172 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 336
+INFO 2025-09-16 02:48:35,218 basehttp 8684 14240 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1228
+INFO 2025-09-16 02:48:35,422 basehttp 8684 14240 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1228
+INFO 2025-09-16 02:48:35,426 basehttp 8684 18172 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1228
+INFO 2025-09-16 02:50:07,392 basehttp 8684 19648 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:50:07,423 basehttp 8684 14240 "GET /api/v1/trips/ HTTP/1.1" 200 1278
+INFO 2025-09-16 02:50:07,439 basehttp 8684 18172 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 224
+INFO 2025-09-16 02:50:07,454 basehttp 8684 14240 "GET /api/v1/trips/ HTTP/1.1" 200 1278
+INFO 2025-09-16 02:50:07,470 basehttp 8684 19648 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 224
+INFO 2025-09-16 02:50:07,769 basehttp 8684 14240 "GET /api/v1/trips/ HTTP/1.1" 200 1278
+INFO 2025-09-16 02:50:07,769 basehttp 8684 18172 "GET /api/v1/trips/ HTTP/1.1" 200 1278
+INFO 2025-09-16 02:50:30,328 basehttp 8684 14240 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:50:30,337 basehttp 8684 19768 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 336
+INFO 2025-09-16 02:50:30,352 basehttp 8684 19648 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 224
+INFO 2025-09-16 02:50:30,368 basehttp 8684 18172 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 224
+INFO 2025-09-16 02:50:30,368 basehttp 8684 8504 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 627
+INFO 2025-09-16 02:50:30,368 basehttp 8684 14240 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 336
+INFO 2025-09-16 02:50:30,384 basehttp 8684 18172 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 627
+INFO 2025-09-16 02:50:30,541 basehttp 8684 14240 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 336
+INFO 2025-09-16 02:50:30,588 basehttp 8684 14240 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 627
+INFO 2025-09-16 02:50:30,603 basehttp 8684 18172 "GET /api/v1/logs/daily/hos_summary/ HTTP/1.1" 200 319
+INFO 2025-09-16 02:50:30,603 basehttp 8684 8504 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1228
+INFO 2025-09-16 02:50:30,603 basehttp 8684 19648 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 336
+INFO 2025-09-16 02:50:30,603 basehttp 8684 19768 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 627
+INFO 2025-09-16 02:50:30,628 basehttp 8684 5020 "GET /api/v1/logs/daily/hos_summary/ HTTP/1.1" 200 319
+INFO 2025-09-16 02:50:30,651 basehttp 8684 18172 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1228
+INFO 2025-09-16 02:50:30,651 basehttp 8684 8504 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 627
+INFO 2025-09-16 02:50:30,651 basehttp 8684 14240 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 627
+INFO 2025-09-16 02:51:24,775 basehttp 8684 18172 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:51:24,775 basehttp 8684 14240 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:51:24,790 basehttp 8684 19648 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 336
+INFO 2025-09-16 02:51:24,790 basehttp 8684 19768 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:51:24,794 basehttp 8684 5020 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 336
+INFO 2025-09-16 02:51:24,803 basehttp 8684 8504 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1228
+INFO 2025-09-16 02:51:24,824 basehttp 8684 16004 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1228
+INFO 2025-09-16 02:51:25,152 basehttp 8684 18172 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1228
+INFO 2025-09-16 02:51:25,175 basehttp 8684 14240 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1228
+INFO 2025-09-16 02:52:45,901 basehttp 8684 18172 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:52:45,927 basehttp 8684 8504 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:52:45,927 basehttp 8684 5020 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 336
+INFO 2025-09-16 02:52:45,932 basehttp 8684 16004 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:52:45,932 basehttp 8684 14240 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:52:45,932 basehttp 8684 19768 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 336
+INFO 2025-09-16 02:52:45,948 basehttp 8684 18172 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1228
+INFO 2025-09-16 02:52:45,948 basehttp 8684 8504 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1228
+INFO 2025-09-16 02:52:46,231 basehttp 8684 18172 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1228
+INFO 2025-09-16 02:52:46,231 basehttp 8684 14240 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1228
+INFO 2025-09-16 02:53:13,956 basehttp 8684 14240 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:53:13,972 basehttp 8684 18172 "GET /api/v1/trips/ HTTP/1.1" 200 1278
+INFO 2025-09-16 02:53:13,972 basehttp 8684 16004 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 224
+INFO 2025-09-16 02:53:13,988 basehttp 8684 19648 "GET /api/v1/trips/ HTTP/1.1" 200 1278
+INFO 2025-09-16 02:53:13,988 basehttp 8684 14240 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 224
+INFO 2025-09-16 02:53:14,113 basehttp 8684 14240 "GET /api/v1/trips/ HTTP/1.1" 200 1278
+INFO 2025-09-16 02:53:14,129 basehttp 8684 18172 "GET /api/v1/trips/ HTTP/1.1" 200 1278
+INFO 2025-09-16 02:53:41,757 basehttp 8684 19648 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:53:41,769 basehttp 8684 14240 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:53:41,785 basehttp 8684 18172 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:53:41,789 basehttp 8684 8504 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 336
+INFO 2025-09-16 02:53:41,795 basehttp 8684 16004 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 336
+INFO 2025-09-16 02:53:41,796 basehttp 8684 19768 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1228
+INFO 2025-09-16 02:53:41,801 basehttp 8684 5020 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1228
+INFO 2025-09-16 02:53:41,977 basehttp 8684 18172 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1228
+INFO 2025-09-16 02:53:41,981 basehttp 8684 14240 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1228
+INFO 2025-09-16 02:53:44,229 basehttp 8684 19648 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:53:44,259 basehttp 8684 18172 "GET /api/v1/trips/ HTTP/1.1" 200 1278
+INFO 2025-09-16 02:53:44,268 basehttp 8684 14240 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 224
+INFO 2025-09-16 02:53:44,268 basehttp 8684 16004 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 224
+INFO 2025-09-16 02:53:44,280 basehttp 8684 8504 "GET /api/v1/trips/ HTTP/1.1" 200 1278
+INFO 2025-09-16 02:53:44,413 basehttp 8684 18172 "GET /api/v1/trips/ HTTP/1.1" 200 1278
+INFO 2025-09-16 02:53:44,587 basehttp 8684 14240 "GET /api/v1/trips/ HTTP/1.1" 200 1278
+INFO 2025-09-16 02:57:31,457 basehttp 8684 8920 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:57:31,457 basehttp 8684 4768 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:57:31,472 basehttp 8684 9128 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 336
+INFO 2025-09-16 02:57:31,488 basehttp 8684 2152 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:57:31,488 basehttp 8684 13220 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 336
+INFO 2025-09-16 02:57:31,488 basehttp 8684 13288 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1228
+INFO 2025-09-16 02:57:31,488 basehttp 8684 10536 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1228
+INFO 2025-09-16 02:57:31,616 basehttp 8684 13288 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1228
+INFO 2025-09-16 02:57:31,629 basehttp 8684 10536 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1228
+INFO 2025-09-16 02:57:34,047 basehttp 8684 13288 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:57:34,063 basehttp 8684 10536 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 336
+INFO 2025-09-16 02:57:34,078 basehttp 8684 9128 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 336
+INFO 2025-09-16 02:57:34,094 basehttp 8684 13288 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 224
+INFO 2025-09-16 02:57:34,094 basehttp 8684 8920 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 627
+INFO 2025-09-16 02:57:34,094 basehttp 8684 4768 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 627
+INFO 2025-09-16 02:57:34,094 basehttp 8684 13220 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 224
+INFO 2025-09-16 02:57:34,235 basehttp 8684 10536 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 336
+INFO 2025-09-16 02:57:34,251 basehttp 8684 9128 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 336
+INFO 2025-09-16 02:57:34,267 basehttp 8684 10536 "GET /api/v1/logs/daily/hos_summary/ HTTP/1.1" 200 319
+INFO 2025-09-16 02:57:34,267 basehttp 8684 8920 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1228
+INFO 2025-09-16 02:57:34,282 basehttp 8684 4768 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 627
+INFO 2025-09-16 02:57:34,282 basehttp 8684 13288 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 627
+INFO 2025-09-16 02:57:34,282 basehttp 8684 13220 "GET /api/v1/logs/daily/hos_summary/ HTTP/1.1" 200 319
+INFO 2025-09-16 02:57:34,314 basehttp 8684 10536 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1228
+INFO 2025-09-16 02:57:34,314 basehttp 8684 9128 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 627
+INFO 2025-09-16 02:57:34,324 basehttp 8684 8920 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 627
+INFO 2025-09-16 02:57:36,605 basehttp 8684 13288 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:57:36,605 basehttp 8684 9128 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:57:36,627 basehttp 8684 13220 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 336
+INFO 2025-09-16 02:57:36,627 basehttp 8684 8920 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 336
+INFO 2025-09-16 02:57:36,637 basehttp 8684 4768 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1228
+INFO 2025-09-16 02:57:36,637 basehttp 8684 10536 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:57:36,637 basehttp 8684 2152 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1228
+INFO 2025-09-16 02:57:36,746 basehttp 8684 13288 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1228
+INFO 2025-09-16 02:57:36,762 basehttp 8684 10536 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1228
+INFO 2025-09-16 02:57:39,316 basehttp 8684 8920 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:57:39,332 basehttp 8684 4768 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 224
+INFO 2025-09-16 02:57:39,332 basehttp 8684 13288 "GET /api/v1/trips/ HTTP/1.1" 200 1278
+INFO 2025-09-16 02:57:39,347 basehttp 8684 2152 "GET /api/v1/trips/ HTTP/1.1" 200 1278
+INFO 2025-09-16 02:57:39,347 basehttp 8684 10536 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 224
+INFO 2025-09-16 02:57:40,826 basehttp 8684 2152 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:57:40,826 basehttp 8684 13288 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:57:40,826 basehttp 8684 8920 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 336
+INFO 2025-09-16 02:57:40,842 basehttp 8684 4768 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1228
+INFO 2025-09-16 02:57:40,842 basehttp 8684 10536 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:57:40,842 basehttp 8684 9128 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 336
+INFO 2025-09-16 02:57:40,842 basehttp 8684 13220 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1228
+INFO 2025-09-16 02:57:40,956 basehttp 8684 10536 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1228
+INFO 2025-09-16 02:57:40,968 basehttp 8684 13288 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1228
+INFO 2025-09-16 02:57:52,933 basehttp 8684 2152 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:57:52,955 basehttp 8684 4768 "GET /api/v1/trips/ HTTP/1.1" 200 1278
+INFO 2025-09-16 02:57:52,955 basehttp 8684 13288 "GET /api/v1/trips/ HTTP/1.1" 200 1278
+INFO 2025-09-16 02:57:52,966 basehttp 8684 13220 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 224
+INFO 2025-09-16 02:57:52,966 basehttp 8684 8920 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 224
+INFO 2025-09-16 02:59:24,729 basehttp 8684 4768 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:59:24,729 basehttp 8684 2152 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:59:24,760 basehttp 8684 13288 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 336
+INFO 2025-09-16 02:59:24,777 basehttp 8684 4768 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:59:24,792 basehttp 8684 2152 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 336
+INFO 2025-09-16 02:59:24,807 basehttp 8684 10536 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1228
+INFO 2025-09-16 02:59:24,807 basehttp 8684 13288 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1228
+INFO 2025-09-16 02:59:24,948 basehttp 8684 10536 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1228
+INFO 2025-09-16 02:59:24,964 basehttp 8684 4768 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1228
+INFO 2025-09-16 02:59:27,185 basehttp 8684 2152 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 02:59:27,201 basehttp 8684 13288 "GET /api/v1/trips/ HTTP/1.1" 200 1278
+INFO 2025-09-16 02:59:27,232 basehttp 8684 4768 "GET /api/v1/trips/ HTTP/1.1" 200 1278
+INFO 2025-09-16 02:59:27,232 basehttp 8684 13288 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 224
+INFO 2025-09-16 02:59:27,248 basehttp 8684 2152 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 224
+INFO 2025-09-16 03:01:00,554 basehttp 8684 10536 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 03:01:00,586 basehttp 8684 10536 "GET /api/v1/trips/ HTTP/1.1" 200 1278
+INFO 2025-09-16 03:01:00,586 basehttp 8684 13288 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 03:01:00,602 basehttp 8684 4768 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 224
+INFO 2025-09-16 03:01:00,617 basehttp 8684 10536 "GET /api/v1/trips/ HTTP/1.1" 200 1278
+INFO 2025-09-16 03:01:00,617 basehttp 8684 2152 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 224
+INFO 2025-09-16 03:01:09,152 basehttp 8684 10536 "OPTIONS /api/v1/trips/ba352068-8da3-47c2-a86a-1047817afe48/ HTTP/1.1" 200 0
+INFO 2025-09-16 03:01:09,222 basehttp 8684 13288 "PATCH /api/v1/trips/ba352068-8da3-47c2-a86a-1047817afe48/ HTTP/1.1" 200 1225
+INFO 2025-09-16 03:01:09,246 basehttp 8684 10536 "OPTIONS /api/v1/logs/entries/add_duty_change/ HTTP/1.1" 200 0
+INFO 2025-09-16 03:01:09,308 basehttp 8684 10536 "POST /api/v1/logs/entries/add_duty_change/ HTTP/1.1" 201 342
+INFO 2025-09-16 03:01:15,437 basehttp 8684 4768 "GET /api/v1/drivers/me/ HTTP/1.1" 200 287
+INFO 2025-09-16 03:01:15,437 basehttp 8684 2152 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 235
+INFO 2025-09-16 03:01:15,450 basehttp 8684 13288 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 348
+INFO 2025-09-16 03:01:15,466 basehttp 8684 10536 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 915
+INFO 2025-09-16 03:01:15,466 basehttp 8684 2152 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 348
+INFO 2025-09-16 03:01:15,481 basehttp 8684 13288 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 915
+INFO 2025-09-16 03:01:15,481 basehttp 8684 4768 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 235
+INFO 2025-09-16 03:01:15,685 basehttp 8684 10536 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 348
+INFO 2025-09-16 03:01:15,716 basehttp 8684 10536 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 915
+INFO 2025-09-16 03:01:15,716 basehttp 8684 2152 "GET /api/v1/logs/daily/hos_summary/ HTTP/1.1" 200 440
+INFO 2025-09-16 03:01:15,737 basehttp 8684 13288 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 915
+INFO 2025-09-16 03:01:15,737 basehttp 8684 4768 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1227
+INFO 2025-09-16 03:01:15,748 basehttp 8684 10536 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 348
+INFO 2025-09-16 03:01:15,764 basehttp 8684 2152 "GET /api/v1/logs/daily/hos_summary/ HTTP/1.1" 200 440
+INFO 2025-09-16 03:01:15,779 basehttp 8684 9428 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 915
+INFO 2025-09-16 03:01:15,779 basehttp 8684 4688 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1227
+INFO 2025-09-16 03:01:15,779 basehttp 8684 13288 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 915
+INFO 2025-09-16 03:01:25,705 basehttp 8684 10536 "GET /api/v1/drivers/me/ HTTP/1.1" 200 287
+INFO 2025-09-16 03:01:25,705 basehttp 8684 4768 "GET /api/v1/drivers/me/ HTTP/1.1" 200 287
+INFO 2025-09-16 03:01:25,720 basehttp 8684 2152 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 348
+INFO 2025-09-16 03:01:25,736 basehttp 8684 13288 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1227
+INFO 2025-09-16 03:01:25,736 basehttp 8684 10536 "GET /api/v1/drivers/me/ HTTP/1.1" 200 287
+INFO 2025-09-16 03:01:25,736 basehttp 8684 4768 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 348
+INFO 2025-09-16 03:01:25,752 basehttp 8684 2152 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1227
+INFO 2025-09-16 03:01:25,987 basehttp 8684 10536 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1227
+INFO 2025-09-16 03:01:25,987 basehttp 8684 4688 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1227
+INFO 2025-09-16 03:01:28,145 basehttp 8684 13288 "GET /api/v1/drivers/me/ HTTP/1.1" 200 287
+INFO 2025-09-16 03:01:28,176 basehttp 8684 4768 "GET /api/v1/trips/ HTTP/1.1" 200 1277
+INFO 2025-09-16 03:01:28,192 basehttp 8684 2152 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 235
+INFO 2025-09-16 03:01:28,192 basehttp 8684 10536 "GET /api/v1/trips/ HTTP/1.1" 200 1277
+INFO 2025-09-16 03:01:28,208 basehttp 8684 13288 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 235
+INFO 2025-09-16 03:02:33,863 basehttp 8684 4768 "GET /api/v1/drivers/me/ HTTP/1.1" 200 287
+INFO 2025-09-16 03:02:35,365 basehttp 8684 2152 "GET /api/v1/drivers/me/ HTTP/1.1" 200 287
+INFO 2025-09-16 03:02:35,381 basehttp 8684 13288 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 235
+INFO 2025-09-16 03:02:35,390 basehttp 8684 4768 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 235
+INFO 2025-09-16 03:02:35,397 basehttp 8684 10536 "GET /api/v1/trips/ HTTP/1.1" 200 1277
+INFO 2025-09-16 03:02:35,412 basehttp 8684 2152 "GET /api/v1/trips/ HTTP/1.1" 200 1277
+INFO 2025-09-16 03:03:07,184 basehttp 8684 13288 "GET /api/v1/drivers/me/ HTTP/1.1" 200 287
+INFO 2025-09-16 03:03:07,184 basehttp 8684 2152 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 348
+INFO 2025-09-16 03:03:07,205 basehttp 8684 9428 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 348
+INFO 2025-09-16 03:03:07,216 basehttp 8684 4768 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 235
+INFO 2025-09-16 03:03:07,216 basehttp 8684 10536 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 235
+INFO 2025-09-16 03:03:07,231 basehttp 8684 4688 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 915
+INFO 2025-09-16 03:03:07,231 basehttp 8684 9768 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 915
+INFO 2025-09-16 03:03:07,357 basehttp 8684 10536 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 348
+INFO 2025-09-16 03:03:07,373 basehttp 8684 10536 "GET /api/v1/logs/daily/hos_summary/ HTTP/1.1" 200 440
+INFO 2025-09-16 03:03:07,389 basehttp 8684 4688 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 915
+INFO 2025-09-16 03:03:07,389 basehttp 8684 9768 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 348
+INFO 2025-09-16 03:03:07,406 basehttp 8684 9428 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 915
+INFO 2025-09-16 03:03:07,406 basehttp 8684 13288 "GET /api/v1/logs/daily/hos_summary/ HTTP/1.1" 200 440
+INFO 2025-09-16 03:03:07,406 basehttp 8684 2152 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 915
+INFO 2025-09-16 03:03:07,420 basehttp 8684 10536 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1227
+INFO 2025-09-16 03:03:07,420 basehttp 8684 9768 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 915
+INFO 2025-09-16 03:03:07,436 basehttp 8684 4688 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1227
+INFO 2025-09-16 03:03:22,005 basehttp 8684 4768 "GET /api/v1/drivers/me/ HTTP/1.1" 200 287
+INFO 2025-09-16 03:03:22,008 basehttp 8684 13288 "GET /api/v1/drivers/me/ HTTP/1.1" 200 287
+INFO 2025-09-16 03:03:22,011 basehttp 8684 2152 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 348
+INFO 2025-09-16 03:03:22,015 basehttp 8684 4688 "GET /api/v1/drivers/me/ HTTP/1.1" 200 287
+INFO 2025-09-16 03:03:22,030 basehttp 8684 9428 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 348
+INFO 2025-09-16 03:03:22,035 basehttp 8684 9768 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1227
+INFO 2025-09-16 03:03:22,036 basehttp 8684 10536 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1227
+INFO 2025-09-16 03:03:22,195 basehttp 8684 10536 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1227
+INFO 2025-09-16 03:03:22,196 basehttp 8684 4688 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1227
+INFO 2025-09-16 03:03:26,335 basehttp 8684 4768 "GET /api/v1/drivers/me/ HTTP/1.1" 200 287
+INFO 2025-09-16 03:03:26,359 basehttp 8684 2152 "GET /api/v1/trips/ HTTP/1.1" 200 1277
+INFO 2025-09-16 03:03:26,359 basehttp 8684 10536 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 235
+INFO 2025-09-16 03:03:26,363 basehttp 8684 13288 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 235
+INFO 2025-09-16 03:03:26,367 basehttp 8684 9768 "GET /api/v1/trips/ HTTP/1.1" 200 1277
+INFO 2025-09-16 03:04:14,851 basehttp 8684 10536 "GET /api/v1/drivers/me/ HTTP/1.1" 200 287
+INFO 2025-09-16 03:04:14,851 basehttp 8684 9768 "GET /api/v1/drivers/me/ HTTP/1.1" 200 287
+INFO 2025-09-16 03:04:14,873 basehttp 8684 4768 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 235
+INFO 2025-09-16 03:04:14,883 basehttp 8684 2152 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 235
+INFO 2025-09-16 03:04:14,883 basehttp 8684 4688 "GET /api/v1/trips/ HTTP/1.1" 200 1277
+INFO 2025-09-16 03:04:14,883 basehttp 8684 9428 "GET /api/v1/trips/ HTTP/1.1" 200 1277
+INFO 2025-09-16 03:04:38,545 basehttp 8684 13288 "GET /api/v1/drivers/me/ HTTP/1.1" 200 287
+INFO 2025-09-16 03:04:39,765 basehttp 8684 10536 "GET /api/v1/drivers/me/ HTTP/1.1" 200 287
+INFO 2025-09-16 03:04:39,787 basehttp 8684 4768 "GET /api/v1/trips/ HTTP/1.1" 200 1277
+INFO 2025-09-16 03:04:39,797 basehttp 8684 9768 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 235
+INFO 2025-09-16 03:04:39,798 basehttp 8684 2152 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 235
+INFO 2025-09-16 03:04:39,798 basehttp 8684 13288 "GET /api/v1/trips/ HTTP/1.1" 200 1277
+INFO 2025-09-16 03:04:53,342 basehttp 8684 10536 "GET /api/v1/drivers/me/ HTTP/1.1" 200 287
+INFO 2025-09-16 03:04:53,377 basehttp 8684 13288 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 348
+INFO 2025-09-16 03:04:53,379 basehttp 8684 4688 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 348
+INFO 2025-09-16 03:04:53,386 basehttp 8684 4768 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 235
+INFO 2025-09-16 03:04:53,405 basehttp 8684 9768 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 915
+INFO 2025-09-16 03:04:53,407 basehttp 8684 9428 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 915
+INFO 2025-09-16 03:04:53,410 basehttp 8684 2152 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 235
+INFO 2025-09-16 03:04:53,624 basehttp 8684 10536 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 348
+INFO 2025-09-16 03:04:53,683 basehttp 8684 9428 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 348
+INFO 2025-09-16 03:04:53,683 basehttp 8684 9768 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 915
+INFO 2025-09-16 03:04:53,703 basehttp 8684 4688 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 915
+INFO 2025-09-16 03:04:53,711 basehttp 8684 10536 "GET /api/v1/logs/daily/hos_summary/ HTTP/1.1" 200 440
+INFO 2025-09-16 03:04:53,712 basehttp 8684 13288 "GET /api/v1/logs/daily/hos_summary/ HTTP/1.1" 200 440
+INFO 2025-09-16 03:04:53,712 basehttp 8684 4768 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 915
+INFO 2025-09-16 03:04:53,757 basehttp 8684 4688 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1227
+INFO 2025-09-16 03:04:53,757 basehttp 8684 9428 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1227
+INFO 2025-09-16 03:04:53,758 basehttp 8684 9768 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 915
+INFO 2025-09-16 03:04:55,782 basehttp 8684 2152 "GET /api/v1/drivers/me/ HTTP/1.1" 200 287
+INFO 2025-09-16 03:04:55,813 basehttp 8684 10536 "GET /api/v1/drivers/me/ HTTP/1.1" 200 287
+INFO 2025-09-16 03:04:55,828 basehttp 8684 13288 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 348
+INFO 2025-09-16 03:04:55,828 basehttp 8684 2152 "GET /api/v1/drivers/me/ HTTP/1.1" 200 287
+INFO 2025-09-16 03:04:55,844 basehttp 8684 4688 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 348
+INFO 2025-09-16 03:04:55,844 basehttp 8684 4768 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1227
+INFO 2025-09-16 03:04:55,844 basehttp 8684 9428 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1227
+INFO 2025-09-16 03:04:56,048 basehttp 8684 10536 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1227
+INFO 2025-09-16 03:04:56,048 basehttp 8684 9768 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1227
+INFO 2025-09-16 03:04:57,823 basehttp 8684 13288 "GET /api/v1/drivers/me/ HTTP/1.1" 200 287
+INFO 2025-09-16 03:04:57,855 basehttp 8684 2152 "GET /api/v1/trips/ HTTP/1.1" 200 1277
+INFO 2025-09-16 03:04:57,855 basehttp 8684 10536 "GET /api/v1/trips/ HTTP/1.1" 200 1277
+INFO 2025-09-16 03:04:57,855 basehttp 8684 4768 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 235
+INFO 2025-09-16 03:04:57,855 basehttp 8684 4688 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 235
+INFO 2025-09-16 03:06:34,876 basehttp 8684 13288 "GET /api/v1/drivers/me/ HTTP/1.1" 200 287
+INFO 2025-09-16 03:06:34,876 basehttp 8684 2152 "GET /api/v1/drivers/me/ HTTP/1.1" 200 287
+INFO 2025-09-16 03:06:34,891 basehttp 8684 4768 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1227
+INFO 2025-09-16 03:06:34,898 basehttp 8684 10536 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 348
+INFO 2025-09-16 03:06:34,908 basehttp 8684 13288 "GET /api/v1/drivers/me/ HTTP/1.1" 200 287
+INFO 2025-09-16 03:06:34,908 basehttp 8684 2152 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 348
+INFO 2025-09-16 03:06:34,923 basehttp 8684 10536 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1227
+INFO 2025-09-16 03:06:35,098 basehttp 8684 9428 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1227
+INFO 2025-09-16 03:06:35,112 basehttp 8684 10536 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1227
+INFO 2025-09-16 03:06:37,259 basehttp 8684 4768 "GET /api/v1/drivers/me/ HTTP/1.1" 200 287
+INFO 2025-09-16 03:06:37,274 basehttp 8684 13288 "GET /api/v1/trips/ HTTP/1.1" 200 1277
+INFO 2025-09-16 03:06:37,274 basehttp 8684 2152 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 235
+INFO 2025-09-16 03:06:37,306 basehttp 8684 10536 "GET /api/v1/trips/ HTTP/1.1" 200 1277
+INFO 2025-09-16 03:06:37,306 basehttp 8684 4768 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 235
+INFO 2025-09-16 03:07:23,239 basehttp 8684 13288 "GET /api/v1/drivers/me/ HTTP/1.1" 200 287
+INFO 2025-09-16 03:08:18,435 basehttp 8684 2152 "GET /api/v1/drivers/me/ HTTP/1.1" 200 287
+INFO 2025-09-16 03:08:18,450 basehttp 8684 13288 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 348
+INFO 2025-09-16 03:08:18,450 basehttp 8684 9428 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 348
+INFO 2025-09-16 03:08:18,466 basehttp 8684 4768 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 235
+INFO 2025-09-16 03:08:18,482 basehttp 8684 10536 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 235
+INFO 2025-09-16 03:08:18,482 basehttp 8684 2120 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 915
+INFO 2025-09-16 03:08:18,498 basehttp 8684 5276 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 915
+INFO 2025-09-16 03:08:18,661 basehttp 8684 10536 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 348
+INFO 2025-09-16 03:08:18,670 basehttp 8684 10536 "GET /api/v1/logs/daily/hos_summary/ HTTP/1.1" 200 440
+INFO 2025-09-16 03:08:18,702 basehttp 8684 9428 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 915
+INFO 2025-09-16 03:08:18,733 basehttp 8684 2152 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 348
+INFO 2025-09-16 03:08:18,748 basehttp 8684 13288 "GET /api/v1/logs/daily/hos_summary/ HTTP/1.1" 200 440
+INFO 2025-09-16 03:08:18,748 basehttp 8684 10536 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1227
+INFO 2025-09-16 03:08:18,748 basehttp 8684 4768 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 915
+INFO 2025-09-16 03:08:18,748 basehttp 8684 2120 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 915
+INFO 2025-09-16 03:08:18,764 basehttp 8684 9428 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1227
+INFO 2025-09-16 03:08:18,764 basehttp 8684 2152 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 915
+INFO 2025-09-16 03:08:31,368 basehttp 8684 10536 "GET /api/v1/drivers/me/ HTTP/1.1" 200 287
+INFO 2025-09-16 03:08:31,383 basehttp 8684 13288 "GET /api/v1/drivers/me/ HTTP/1.1" 200 287
+INFO 2025-09-16 03:08:31,388 basehttp 8684 9428 "GET /api/v1/drivers/me/ HTTP/1.1" 200 287
+INFO 2025-09-16 03:08:31,388 basehttp 8684 5276 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 348
+INFO 2025-09-16 03:08:31,388 basehttp 8684 4768 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 348
+INFO 2025-09-16 03:08:31,398 basehttp 8684 2152 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1227
+INFO 2025-09-16 03:08:31,403 basehttp 8684 2120 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1227
+INFO 2025-09-16 03:08:31,490 basehttp 8684 10536 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1227
+INFO 2025-09-16 03:08:31,500 basehttp 8684 9428 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1227
+INFO 2025-09-16 03:08:35,627 basehttp 8684 13288 "GET /api/v1/drivers/me/ HTTP/1.1" 200 287
+INFO 2025-09-16 03:08:35,642 basehttp 8684 4768 "GET /api/v1/trips/ HTTP/1.1" 200 1277
+INFO 2025-09-16 03:08:35,657 basehttp 8684 10536 "GET /api/v1/trips/ HTTP/1.1" 200 1277
+INFO 2025-09-16 03:08:35,667 basehttp 8684 2152 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 235
+INFO 2025-09-16 03:08:35,667 basehttp 8684 13288 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 235
+INFO 2025-09-16 03:08:41,234 basehttp 8684 4768 "GET /api/v1/drivers/me/ HTTP/1.1" 200 287
+INFO 2025-09-16 03:10:09,605 basehttp 8684 10536 "GET /api/v1/drivers/me/ HTTP/1.1" 200 287
+INFO 2025-09-16 03:10:09,620 basehttp 8684 13288 "GET /api/v1/trips/ HTTP/1.1" 200 1277
+INFO 2025-09-16 03:10:09,620 basehttp 8684 2152 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 235
+INFO 2025-09-16 03:10:09,652 basehttp 8684 4768 "GET /api/v1/trips/ HTTP/1.1" 200 1277
+INFO 2025-09-16 03:10:09,652 basehttp 8684 10536 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 235
+INFO 2025-09-16 03:10:14,043 basehttp 8684 13288 "PATCH /api/v1/trips/ba352068-8da3-47c2-a86a-1047817afe48/ HTTP/1.1" 200 1228
+INFO 2025-09-16 03:10:14,090 basehttp 8684 10536 "POST /api/v1/logs/entries/add_duty_change/ HTTP/1.1" 201 331
+INFO 2025-09-16 03:10:18,266 basehttp 8684 2152 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 03:10:21,059 basehttp 8684 10536 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 03:10:21,059 basehttp 8684 9428 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 03:10:24,343 basehttp 8684 4768 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 03:10:24,359 basehttp 8684 13288 "GET /api/v1/trips/ HTTP/1.1" 200 1280
+INFO 2025-09-16 03:10:24,359 basehttp 8684 2152 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 224
+INFO 2025-09-16 03:10:24,374 basehttp 8684 10536 "GET /api/v1/trips/ HTTP/1.1" 200 1280
+INFO 2025-09-16 03:10:24,374 basehttp 8684 9428 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 224
+INFO 2025-09-16 03:10:28,685 basehttp 8684 13288 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 03:10:28,685 basehttp 8684 10536 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 03:10:28,685 basehttp 8684 4768 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 03:10:28,701 basehttp 8684 2152 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 337
+INFO 2025-09-16 03:10:28,701 basehttp 8684 9428 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1230
+INFO 2025-09-16 03:10:28,716 basehttp 8684 13288 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 337
+INFO 2025-09-16 03:10:28,732 basehttp 8684 10536 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1230
+INFO 2025-09-16 03:10:28,952 basehttp 8684 9428 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1230
+INFO 2025-09-16 03:10:28,967 basehttp 8684 10536 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1230
+INFO 2025-09-16 03:10:39,897 basehttp 8684 13288 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 03:10:39,913 basehttp 8684 10536 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 337
+INFO 2025-09-16 03:10:39,913 basehttp 8684 2152 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 337
+INFO 2025-09-16 03:10:39,928 basehttp 8684 14092 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 1218
+INFO 2025-09-16 03:10:39,928 basehttp 8684 8468 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 1218
+INFO 2025-09-16 03:10:39,928 basehttp 8684 4768 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 224
+INFO 2025-09-16 03:10:39,944 basehttp 8684 9428 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 224
+INFO 2025-09-16 03:10:40,054 basehttp 8684 10536 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 337
+INFO 2025-09-16 03:10:40,085 basehttp 8684 10536 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 1218
+INFO 2025-09-16 03:10:40,101 basehttp 8684 9428 "GET /api/v1/logs/daily/hos_summary/ HTTP/1.1" 200 443
+INFO 2025-09-16 03:10:40,101 basehttp 8684 13288 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 337
+INFO 2025-09-16 03:10:40,101 basehttp 8684 14092 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1230
+INFO 2025-09-16 03:10:40,101 basehttp 8684 8468 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 1218
+INFO 2025-09-16 03:10:40,117 basehttp 8684 2152 "GET /api/v1/logs/daily/hos_summary/ HTTP/1.1" 200 443
+INFO 2025-09-16 03:10:40,141 basehttp 8684 9428 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1230
+INFO 2025-09-16 03:10:40,141 basehttp 8684 13288 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 1218
+INFO 2025-09-16 03:10:40,149 basehttp 8684 10536 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 1218
+INFO 2025-09-16 03:10:53,159 basehttp 8684 13288 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 03:10:53,159 basehttp 8684 10536 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 03:10:53,175 basehttp 8684 4768 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 337
+INFO 2025-09-16 03:10:53,175 basehttp 8684 9428 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 03:10:53,190 basehttp 8684 14092 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 337
+INFO 2025-09-16 03:10:53,195 basehttp 8684 8468 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1230
+INFO 2025-09-16 03:10:53,195 basehttp 8684 2152 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1230
+INFO 2025-09-16 03:10:53,301 basehttp 8684 9428 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1230
+INFO 2025-09-16 03:10:53,317 basehttp 8684 10536 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 1230
+INFO 2025-09-16 03:11:50,306 basehttp 8684 13288 "POST /api/v1/trips/plan/ HTTP/1.1" 201 1997
+INFO 2025-09-16 03:11:50,423 basehttp 8684 10536 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 03:11:53,380 basehttp 8684 13288 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 03:11:53,386 basehttp 8684 4768 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 03:11:53,389 basehttp 8684 10536 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 03:11:53,410 basehttp 8684 14092 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 353
+INFO 2025-09-16 03:11:53,410 basehttp 8684 2152 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 353
+INFO 2025-09-16 03:11:53,413 basehttp 8684 9428 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 2460
+INFO 2025-09-16 03:11:53,419 basehttp 8684 8468 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 2460
+INFO 2025-09-16 03:11:53,506 basehttp 8684 8468 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 2460
+INFO 2025-09-16 03:11:53,512 basehttp 8684 9428 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 2460
+INFO 2025-09-16 03:11:54,760 basehttp 8684 8468 "GET /api/v1/drivers/me/ HTTP/1.1" 200 276
+INFO 2025-09-16 03:11:54,778 basehttp 8684 9428 "GET /api/v1/trips/ HTTP/1.1" 200 2510
+INFO 2025-09-16 03:11:54,781 basehttp 8684 13288 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 224
+INFO 2025-09-16 03:11:54,799 basehttp 8684 9428 "GET /api/v1/trips/ HTTP/1.1" 200 2510
+INFO 2025-09-16 03:11:54,817 basehttp 8684 8468 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 224
+INFO 2025-09-16 03:12:13,244 basehttp 8684 9428 "OPTIONS /api/v1/trips/b45f75c5-b959-407d-92a0-98817298ab42/ HTTP/1.1" 200 0
+INFO 2025-09-16 03:12:13,275 basehttp 8684 9428 "PATCH /api/v1/trips/b45f75c5-b959-407d-92a0-98817298ab42/ HTTP/1.1" 200 1228
+INFO 2025-09-16 03:12:13,355 basehttp 8684 9428 "POST /api/v1/logs/entries/add_duty_change/ HTTP/1.1" 201 341
+INFO 2025-09-16 03:12:20,709 basehttp 8684 9428 "GET /api/v1/drivers/me/ HTTP/1.1" 200 287
+INFO 2025-09-16 03:13:09,811 basehttp 8684 9428 "GET /api/v1/drivers/me/ HTTP/1.1" 200 287
+INFO 2025-09-16 03:13:09,848 basehttp 8684 4768 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 235
+INFO 2025-09-16 03:13:09,859 basehttp 8684 10536 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 235
+INFO 2025-09-16 03:13:09,859 basehttp 8684 13288 "GET /api/v1/trips/ HTTP/1.1" 200 2509
+INFO 2025-09-16 03:13:09,860 basehttp 8684 8468 "GET /api/v1/trips/ HTTP/1.1" 200 2509
+INFO 2025-09-16 03:13:12,574 basehttp 8684 9428 "GET /api/v1/drivers/me/ HTTP/1.1" 200 287
+INFO 2025-09-16 03:15:21,812 basehttp 8684 12084 "POST /api/v1/drivers/logout/ HTTP/1.1" 200 31
+INFO 2025-09-16 03:15:40,889 basehttp 8684 12084 "POST /api/v1/drivers/login/ HTTP/1.1" 200 378
+INFO 2025-09-16 03:15:41,165 basehttp 8684 12084 "GET /api/v1/drivers/me/ HTTP/1.1" 200 287
+INFO 2025-09-16 03:15:41,173 basehttp 8684 13288 "GET /api/v1/drivers/me/ HTTP/1.1" 200 287
+INFO 2025-09-16 03:15:41,173 basehttp 8684 19640 "GET /api/v1/drivers/me/ HTTP/1.1" 200 287
+INFO 2025-09-16 03:15:41,285 basehttp 8684 13288 "OPTIONS /api/v1/drivers/stats/ HTTP/1.1" 200 0
+INFO 2025-09-16 03:15:41,309 basehttp 8684 19640 "OPTIONS /api/v1/drivers/hos_status/ HTTP/1.1" 200 0
+INFO 2025-09-16 03:15:41,309 basehttp 8684 13288 "OPTIONS /api/v1/drivers/stats/ HTTP/1.1" 200 0
+INFO 2025-09-16 03:15:41,309 basehttp 8684 12084 "OPTIONS /api/v1/logs/daily/today/ HTTP/1.1" 200 0
+INFO 2025-09-16 03:15:41,321 basehttp 8684 4776 "OPTIONS /api/v1/drivers/hos_status/ HTTP/1.1" 200 0
+INFO 2025-09-16 03:15:41,321 basehttp 8684 15796 "OPTIONS /api/v1/logs/daily/today/ HTTP/1.1" 200 0
+INFO 2025-09-16 03:15:41,325 basehttp 8684 7552 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 235
+INFO 2025-09-16 03:15:41,361 basehttp 8684 19640 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 364
+INFO 2025-09-16 03:15:41,373 basehttp 8684 4776 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 364
+INFO 2025-09-16 03:15:41,381 basehttp 8684 13288 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 1547
+INFO 2025-09-16 03:15:41,385 basehttp 8684 15796 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 1547
+INFO 2025-09-16 03:15:41,385 basehttp 8684 7552 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 235
+INFO 2025-09-16 03:15:41,705 basehttp 8684 13288 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 364
+INFO 2025-09-16 03:15:41,721 basehttp 8684 15796 "GET /api/v1/logs/daily/hos_summary/ HTTP/1.1" 200 444
+INFO 2025-09-16 03:15:41,729 basehttp 8684 19640 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 1547
+INFO 2025-09-16 03:15:41,753 basehttp 8684 7552 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 364
+INFO 2025-09-16 03:15:41,773 basehttp 8684 4776 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 1547
+INFO 2025-09-16 03:15:41,773 basehttp 8684 13288 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 2459
+INFO 2025-09-16 03:15:41,785 basehttp 8684 12084 "GET /api/v1/logs/daily/hos_summary/ HTTP/1.1" 200 444
+INFO 2025-09-16 03:15:41,809 basehttp 8684 15796 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 1547
+INFO 2025-09-16 03:15:41,809 basehttp 8684 7552 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 1547
+INFO 2025-09-16 03:15:41,809 basehttp 8684 19640 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 2459
+INFO 2025-09-16 03:15:53,896 basehttp 8684 19640 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 364
+INFO 2025-09-16 03:15:53,896 basehttp 8684 13288 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 235
+INFO 2025-09-16 03:15:53,931 basehttp 8684 4776 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 1547
+INFO 2025-09-16 03:15:53,937 basehttp 8684 19640 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 364
+INFO 2025-09-16 03:15:53,941 basehttp 8684 7552 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 1547
+INFO 2025-09-16 03:15:53,948 basehttp 8684 15796 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 235
+INFO 2025-09-16 03:15:54,172 basehttp 8684 13288 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 364
+INFO 2025-09-16 03:15:54,188 basehttp 8684 19640 "GET /api/v1/logs/daily/hos_summary/ HTTP/1.1" 200 444
+INFO 2025-09-16 03:15:54,209 basehttp 8684 13288 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 1547
+INFO 2025-09-16 03:15:54,239 basehttp 8684 19640 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 2459
+INFO 2025-09-16 03:15:54,280 basehttp 8684 13288 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 1547
+INFO 2025-09-16 03:15:54,294 basehttp 8684 19640 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 364
+INFO 2025-09-16 03:15:54,322 basehttp 8684 15796 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 2459
+INFO 2025-09-16 03:15:54,322 basehttp 8684 7552 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 1547
+INFO 2025-09-16 03:15:54,322 basehttp 8684 4776 "GET /api/v1/logs/daily/hos_summary/ HTTP/1.1" 200 444
+INFO 2025-09-16 03:15:54,343 basehttp 8684 13288 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 1547
+INFO 2025-09-16 03:17:41,229 basehttp 8684 19640 "POST /api/v1/drivers/logout/ HTTP/1.1" 200 31
+WARNING 2025-09-16 03:17:46,070 log 8684 15796 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:17:46,070 log 8684 13288 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:17:46,070 basehttp 8684 15796 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:17:46,070 basehttp 8684 13288 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:17:46,101 log 8684 19640 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:17:46,101 basehttp 8684 19640 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:17:46,180 log 8684 15796 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:17:46,180 basehttp 8684 15796 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:17:46,180 log 8684 13288 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:17:46,180 basehttp 8684 13288 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:17:46,211 log 8684 19640 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:17:46,211 basehttp 8684 19640 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:17:46,227 log 8684 15796 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:17:46,227 basehttp 8684 15796 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:17:46,243 log 8684 13288 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:17:46,243 log 8684 19640 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:17:46,243 log 8684 15796 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:17:46,243 basehttp 8684 13288 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:17:46,243 basehttp 8684 19640 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:17:46,243 basehttp 8684 15796 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:17:46,243 log 8684 13288 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:17:46,243 basehttp 8684 13288 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:17:46,274 log 8684 19640 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:17:46,274 basehttp 8684 19640 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:17:46,321 log 8684 15796 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:17:46,321 log 8684 19640 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:17:46,321 log 8684 13288 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:17:46,337 log 8684 7552 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:17:46,340 log 8684 4776 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:17:46,340 log 8684 16680 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:17:46,340 basehttp 8684 19640 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:17:46,340 basehttp 8684 15796 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:17:46,340 basehttp 8684 13288 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:17:46,340 basehttp 8684 7552 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:17:46,340 basehttp 8684 4776 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:17:46,340 basehttp 8684 16680 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:17:46,400 log 8684 15796 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:17:46,400 basehttp 8684 15796 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:17:46,400 log 8684 19640 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:17:46,400 log 8684 13288 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:17:46,400 log 8684 15796 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:17:46,400 log 8684 4776 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:17:46,415 log 8684 7552 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:17:46,415 basehttp 8684 19640 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:17:46,415 basehttp 8684 13288 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:17:46,415 basehttp 8684 15796 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:17:46,415 basehttp 8684 4776 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:17:46,415 basehttp 8684 7552 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:17:46,447 log 8684 19640 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:17:46,447 basehttp 8684 19640 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:17:46,447 log 8684 13288 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:17:46,447 basehttp 8684 13288 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:17:46,463 log 8684 13288 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:17:46,463 log 8684 19640 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:17:46,463 log 8684 15796 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:17:46,463 log 8684 4776 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:17:46,463 basehttp 8684 13288 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:17:46,463 basehttp 8684 15796 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:17:46,463 basehttp 8684 19640 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:17:46,463 basehttp 8684 4776 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:17:46,463 log 8684 13288 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:17:46,476 log 8684 19640 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:17:46,477 log 8684 15796 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:17:46,479 log 8684 7552 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:17:46,480 log 8684 4776 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:17:46,481 log 8684 16680 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:17:46,482 basehttp 8684 13288 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:17:46,483 basehttp 8684 19640 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:17:46,483 basehttp 8684 15796 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:17:46,484 basehttp 8684 7552 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:17:46,485 basehttp 8684 4776 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:17:46,485 basehttp 8684 16680 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:17:46,509 log 8684 13288 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:17:46,510 log 8684 19640 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:17:46,511 basehttp 8684 13288 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:17:46,512 basehttp 8684 19640 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:17:46,522 log 8684 15796 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:17:46,523 basehttp 8684 15796 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:17:46,531 log 8684 13288 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:17:46,531 basehttp 8684 13288 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:17:46,538 log 8684 19640 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:17:46,540 log 8684 15796 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:17:46,541 basehttp 8684 19640 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:17:46,542 basehttp 8684 15796 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:17:46,693 log 8684 13288 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:17:46,695 log 8684 19640 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:17:46,695 basehttp 8684 13288 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:17:46,697 log 8684 15796 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:17:46,698 basehttp 8684 19640 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:17:46,700 log 8684 13288 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:17:46,702 log 8684 19640 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:17:46,704 log 8684 7552 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:17:46,705 basehttp 8684 15796 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:17:46,705 basehttp 8684 13288 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:17:46,706 basehttp 8684 19640 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:17:46,707 basehttp 8684 7552 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:17:46,809 log 8684 15796 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:17:46,811 log 8684 4776 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:17:46,812 log 8684 13288 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:17:46,814 log 8684 19640 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:17:46,815 log 8684 7552 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:17:46,816 log 8684 16680 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:17:46,817 basehttp 8684 15796 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:17:46,818 basehttp 8684 4776 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:17:46,819 basehttp 8684 13288 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:17:46,819 basehttp 8684 19640 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:17:46,820 basehttp 8684 7552 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:17:46,820 basehttp 8684 16680 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:17:46,823 log 8684 15796 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:17:46,825 log 8684 4776 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:17:46,827 log 8684 13288 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:17:46,828 log 8684 19640 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:17:46,831 log 8684 7552 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:17:46,833 log 8684 16680 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:17:46,834 basehttp 8684 15796 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:17:46,834 basehttp 8684 4776 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:17:46,835 basehttp 8684 13288 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:17:46,836 basehttp 8684 19640 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:17:46,836 basehttp 8684 7552 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:17:46,836 basehttp 8684 16680 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:17:46,840 log 8684 15796 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:17:46,841 log 8684 4776 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:17:46,843 log 8684 13288 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:17:46,845 log 8684 19640 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:17:46,847 log 8684 16680 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:17:46,848 log 8684 7552 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:17:46,849 basehttp 8684 15796 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:17:46,850 basehttp 8684 4776 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:17:46,850 basehttp 8684 13288 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:17:46,851 basehttp 8684 19640 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:17:46,853 basehttp 8684 16680 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+INFO 2025-09-16 03:17:46,854 basehttp 8684 7552 - Broken pipe from ('127.0.0.1', 9026)
+INFO 2025-09-16 03:20:36,817 basehttp 8684 2092 "POST /api/v1/drivers/login/ HTTP/1.1" 200 378
+INFO 2025-09-16 03:20:37,018 basehttp 8684 2092 "GET /api/v1/drivers/me/ HTTP/1.1" 200 287
+INFO 2025-09-16 03:20:37,024 basehttp 8684 2092 "GET /api/v1/drivers/me/ HTTP/1.1" 200 287
+INFO 2025-09-16 03:20:37,024 basehttp 8684 14760 "GET /api/v1/drivers/me/ HTTP/1.1" 200 287
+INFO 2025-09-16 03:20:37,071 basehttp 8684 14760 "OPTIONS /api/v1/drivers/stats/ HTTP/1.1" 200 0
+INFO 2025-09-16 03:20:37,180 basehttp 8684 2092 "OPTIONS /api/v1/drivers/hos_status/ HTTP/1.1" 200 0
+INFO 2025-09-16 03:20:37,180 basehttp 8684 14760 "OPTIONS /api/v1/drivers/stats/ HTTP/1.1" 200 0
+INFO 2025-09-16 03:20:37,180 basehttp 8684 14760 "OPTIONS /api/v1/logs/daily/today/ HTTP/1.1" 200 0
+INFO 2025-09-16 03:20:37,180 basehttp 8684 4508 "OPTIONS /api/v1/drivers/hos_status/ HTTP/1.1" 200 0
+INFO 2025-09-16 03:20:37,180 basehttp 8684 16812 "OPTIONS /api/v1/logs/daily/today/ HTTP/1.1" 200 0
+INFO 2025-09-16 03:20:37,228 basehttp 8684 14760 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 364
+INFO 2025-09-16 03:20:37,228 basehttp 8684 16812 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 364
+INFO 2025-09-16 03:20:37,243 basehttp 8684 1640 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 235
+INFO 2025-09-16 03:20:37,243 basehttp 8684 2092 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 1547
+INFO 2025-09-16 03:20:37,259 basehttp 8684 4508 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 1547
+INFO 2025-09-16 03:20:37,259 basehttp 8684 15128 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 235
+INFO 2025-09-16 03:20:37,448 basehttp 8684 4508 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 364
+INFO 2025-09-16 03:20:37,495 basehttp 8684 4508 "GET /api/v1/logs/daily/hos_summary/ HTTP/1.1" 200 444
+INFO 2025-09-16 03:20:37,495 basehttp 8684 14760 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 1547
+INFO 2025-09-16 03:20:37,519 basehttp 8684 1640 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 364
+INFO 2025-09-16 03:20:37,526 basehttp 8684 2092 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 1547
+INFO 2025-09-16 03:20:37,526 basehttp 8684 16812 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 1547
+INFO 2025-09-16 03:20:37,526 basehttp 8684 15128 "GET /api/v1/logs/daily/hos_summary/ HTTP/1.1" 200 444
+INFO 2025-09-16 03:20:37,558 basehttp 8684 4508 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 2459
+INFO 2025-09-16 03:20:37,558 basehttp 8684 14760 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 2459
+INFO 2025-09-16 03:20:37,558 basehttp 8684 1640 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 1547
+INFO 2025-09-16 03:22:13,807 basehttp 8684 4508 "POST /api/v1/drivers/logout/ HTTP/1.1" 200 31
+WARNING 2025-09-16 03:22:17,934 log 8684 14760 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:17,950 basehttp 8684 14760 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:17,950 log 8684 4508 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:17,950 log 8684 14760 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:17,950 basehttp 8684 4508 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:17,950 basehttp 8684 14760 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:17,968 log 8684 4508 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:17,968 log 8684 14760 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:17,968 log 8684 16812 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:17,968 basehttp 8684 4508 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:17,968 basehttp 8684 14760 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:17,968 basehttp 8684 16812 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,452 log 8684 4508 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:18,452 log 8684 14760 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:18,469 log 8684 1640 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:18,469 log 8684 16812 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:18,469 log 8684 15128 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:18,469 basehttp 8684 4508 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,469 basehttp 8684 14760 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,469 basehttp 8684 1640 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,469 basehttp 8684 16812 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,469 log 8684 4508 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:18,469 basehttp 8684 15128 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,469 basehttp 8684 4508 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,546 log 8684 14760 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:18,546 log 8684 4508 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:18,546 log 8684 1640 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:18,546 log 8684 16812 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:18,562 log 8684 15128 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:18,562 basehttp 8684 14760 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,562 basehttp 8684 4508 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,562 basehttp 8684 1640 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,562 log 8684 14760 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:18,562 basehttp 8684 16812 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,562 basehttp 8684 15128 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,569 basehttp 8684 14760 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,594 log 8684 14760 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:18,594 log 8684 1640 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:18,594 log 8684 16812 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:18,594 log 8684 15128 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:18,594 log 8684 4508 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:18,594 log 8684 2092 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:18,594 basehttp 8684 14760 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,594 basehttp 8684 1640 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,594 basehttp 8684 16812 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,594 basehttp 8684 15128 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,594 basehttp 8684 4508 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,594 basehttp 8684 2092 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,672 log 8684 14760 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:18,672 log 8684 4508 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:18,672 log 8684 1640 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:18,672 log 8684 15128 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:18,672 log 8684 16812 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:18,672 basehttp 8684 14760 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,672 basehttp 8684 4508 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,672 basehttp 8684 1640 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,672 basehttp 8684 15128 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,672 basehttp 8684 16812 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,688 log 8684 14760 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:18,688 basehttp 8684 14760 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,703 log 8684 4508 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:18,703 log 8684 14760 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:18,703 log 8684 1640 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:18,703 log 8684 16812 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:18,703 basehttp 8684 4508 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,719 basehttp 8684 14760 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,719 basehttp 8684 1640 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,719 basehttp 8684 16812 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,726 log 8684 4508 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:18,728 log 8684 14760 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:18,729 basehttp 8684 4508 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,729 basehttp 8684 14760 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,734 log 8684 4508 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:18,736 log 8684 14760 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:18,738 log 8684 1640 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:18,741 log 8684 2092 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:18,743 log 8684 16812 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:18,745 log 8684 15128 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:18,746 basehttp 8684 4508 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,746 basehttp 8684 14760 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,747 basehttp 8684 1640 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,748 basehttp 8684 2092 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,750 basehttp 8684 16812 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,750 basehttp 8684 15128 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,780 log 8684 4508 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:18,783 log 8684 14760 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:18,785 log 8684 16812 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:18,787 log 8684 1640 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:18,789 log 8684 15128 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:18,792 log 8684 2092 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:18,793 basehttp 8684 4508 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,794 basehttp 8684 16812 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,794 basehttp 8684 14760 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,795 basehttp 8684 1640 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,796 basehttp 8684 15128 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,796 basehttp 8684 2092 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,839 log 8684 4508 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:18,841 log 8684 14760 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:18,843 log 8684 16812 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:18,844 basehttp 8684 4508 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,845 basehttp 8684 14760 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,849 log 8684 4508 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:18,853 log 8684 14760 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:18,853 basehttp 8684 16812 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,855 log 8684 1640 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:18,856 basehttp 8684 4508 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,857 basehttp 8684 14760 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,858 basehttp 8684 1640 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,871 log 8684 4508 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:18,873 log 8684 16812 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:18,874 log 8684 1640 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:18,876 log 8684 15128 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:18,878 log 8684 14760 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:18,880 log 8684 2092 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:18,881 basehttp 8684 4508 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,883 basehttp 8684 16812 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,884 basehttp 8684 1640 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,885 basehttp 8684 15128 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,886 log 8684 4508 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:18,889 log 8684 16812 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:18,889 basehttp 8684 2092 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,889 basehttp 8684 14760 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,892 log 8684 1640 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:18,895 log 8684 15128 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:18,896 basehttp 8684 4508 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,899 basehttp 8684 16812 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,902 log 8684 2092 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:18,904 log 8684 14760 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:18,905 basehttp 8684 1640 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,906 basehttp 8684 15128 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,908 basehttp 8684 2092 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,908 basehttp 8684 14760 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,912 log 8684 4508 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:18,915 log 8684 14760 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:18,917 log 8684 16812 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:18,919 log 8684 1640 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:18,921 log 8684 15128 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:18,923 log 8684 2092 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:18,925 basehttp 8684 4508 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,925 basehttp 8684 14760 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,926 basehttp 8684 16812 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,926 basehttp 8684 1640 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,927 basehttp 8684 15128 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,929 basehttp 8684 2092 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,943 log 8684 4508 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:18,944 log 8684 16812 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:18,947 log 8684 14760 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:18,948 basehttp 8684 4508 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,950 basehttp 8684 16812 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,952 log 8684 4508 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:18,953 basehttp 8684 14760 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,954 log 8684 1640 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:18,957 log 8684 14760 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:18,958 basehttp 8684 4508 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,958 basehttp 8684 1640 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,959 basehttp 8684 14760 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,964 log 8684 4508 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:18,966 log 8684 14760 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:18,974 log 8684 16812 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:18,977 log 8684 2092 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:18,979 log 8684 1640 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:18,981 log 8684 15128 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:18,983 basehttp 8684 4508 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,983 basehttp 8684 14760 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,984 basehttp 8684 16812 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,985 basehttp 8684 1640 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,985 basehttp 8684 2092 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,988 log 8684 4508 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:18,988 basehttp 8684 15128 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:18,990 log 8684 14760 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:18,992 log 8684 16812 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:18,994 log 8684 1640 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:18,997 log 8684 2092 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:18,998 basehttp 8684 4508 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,000 log 8684 15128 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,002 basehttp 8684 14760 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,002 basehttp 8684 16812 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,004 basehttp 8684 2092 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,004 basehttp 8684 1640 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,005 basehttp 8684 15128 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,026 log 8684 4508 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,029 log 8684 16812 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,031 log 8684 1640 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,033 log 8684 15128 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,035 log 8684 2092 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,037 log 8684 14760 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,038 basehttp 8684 4508 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,039 basehttp 8684 16812 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,040 basehttp 8684 15128 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,043 log 8684 4508 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,043 basehttp 8684 1640 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,044 basehttp 8684 2092 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,047 log 8684 16812 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,050 log 8684 15128 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,050 basehttp 8684 14760 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,052 log 8684 1640 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,055 log 8684 2092 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,055 basehttp 8684 4508 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,056 basehttp 8684 16812 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,059 log 8684 14760 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,060 basehttp 8684 15128 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,060 basehttp 8684 1640 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,063 log 8684 4508 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,064 basehttp 8684 2092 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,066 log 8684 16812 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,071 log 8684 15128 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,071 basehttp 8684 14760 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,073 log 8684 1640 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,076 log 8684 2092 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,076 basehttp 8684 4508 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,080 log 8684 14760 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,081 basehttp 8684 16812 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,082 basehttp 8684 15128 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,083 basehttp 8684 1640 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,085 log 8684 4508 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,086 basehttp 8684 2092 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,089 log 8684 16812 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,092 log 8684 15128 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,093 basehttp 8684 14760 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,096 log 8684 1640 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,097 basehttp 8684 4508 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,100 log 8684 2092 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,101 basehttp 8684 16812 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,102 basehttp 8684 15128 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,103 log 8684 14760 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,107 log 8684 4508 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,107 basehttp 8684 1640 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,109 log 8684 16812 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,112 log 8684 15128 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,112 basehttp 8684 2092 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,117 log 8684 1640 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,117 basehttp 8684 4508 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,118 basehttp 8684 14760 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,119 basehttp 8684 16812 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,121 log 8684 2092 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,121 basehttp 8684 15128 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,122 basehttp 8684 1640 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,124 log 8684 4508 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,126 log 8684 14760 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,129 log 8684 16812 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,130 basehttp 8684 2092 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,132 log 8684 15128 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,135 log 8684 1640 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,137 basehttp 8684 4508 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,137 basehttp 8684 14760 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,139 log 8684 2092 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,139 basehttp 8684 16812 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,143 log 8684 4508 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,143 basehttp 8684 15128 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,145 basehttp 8684 1640 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,145 log 8684 14760 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,146 basehttp 8684 2092 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,150 log 8684 16812 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,152 log 8684 15128 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,154 log 8684 1640 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,155 basehttp 8684 4508 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,157 log 8684 2092 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,158 basehttp 8684 14760 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,159 basehttp 8684 16812 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,159 basehttp 8684 15128 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,161 log 8684 4508 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,162 basehttp 8684 1640 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,164 basehttp 8684 2092 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,167 log 8684 14760 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,170 log 8684 16812 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,172 log 8684 15128 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,174 log 8684 1640 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,174 basehttp 8684 4508 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,176 log 8684 2092 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,178 basehttp 8684 14760 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,179 basehttp 8684 15128 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,179 basehttp 8684 16812 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,180 basehttp 8684 1640 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,183 log 8684 4508 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,185 log 8684 14760 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,187 log 8684 15128 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,187 basehttp 8684 2092 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,189 log 8684 16812 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,191 log 8684 1640 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,192 basehttp 8684 4508 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,193 basehttp 8684 14760 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,194 basehttp 8684 15128 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,196 log 8684 2092 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,198 basehttp 8684 16812 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,201 log 8684 4508 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,201 basehttp 8684 1640 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,204 log 8684 14760 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,206 log 8684 15128 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,208 log 8684 16812 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,211 log 8684 1640 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,211 basehttp 8684 2092 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,212 basehttp 8684 4508 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,213 basehttp 8684 14760 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,216 basehttp 8684 15128 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,218 log 8684 2092 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,218 basehttp 8684 16812 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,221 log 8684 4508 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,221 basehttp 8684 1640 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,223 log 8684 14760 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,225 log 8684 15128 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,225 basehttp 8684 2092 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,228 log 8684 16812 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,229 basehttp 8684 4508 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,232 log 8684 1640 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,235 log 8684 2092 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,236 basehttp 8684 14760 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,236 basehttp 8684 15128 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,238 log 8684 4508 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,239 basehttp 8684 16812 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,242 log 8684 14760 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,242 basehttp 8684 2092 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,242 basehttp 8684 1640 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,244 log 8684 15128 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,246 basehttp 8684 4508 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,250 log 8684 16812 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,252 log 8684 2092 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,252 basehttp 8684 14760 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,255 log 8684 1640 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,258 log 8684 4508 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,258 basehttp 8684 15128 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,259 basehttp 8684 16812 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,261 log 8684 14760 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,262 basehttp 8684 2092 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,264 basehttp 8684 4508 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,265 basehttp 8684 1640 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,267 log 8684 15128 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,270 log 8684 16812 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,273 log 8684 2092 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,274 basehttp 8684 14760 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,276 log 8684 4508 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,278 log 8684 1640 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,282 basehttp 8684 15128 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,282 basehttp 8684 16812 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,285 log 8684 14760 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,286 basehttp 8684 2092 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,287 basehttp 8684 4508 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,289 log 8684 15128 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,289 basehttp 8684 1640 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,291 log 8684 16812 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,294 log 8684 2092 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,297 log 8684 4508 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,298 basehttp 8684 15128 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,298 basehttp 8684 14760 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,302 log 8684 1640 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,303 basehttp 8684 16812 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,306 log 8684 15128 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,306 basehttp 8684 2092 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,309 log 8684 14760 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,309 basehttp 8684 4508 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,312 log 8684 16812 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,313 basehttp 8684 1640 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,316 log 8684 2092 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,317 basehttp 8684 15128 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,319 log 8684 4508 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,320 basehttp 8684 16812 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,321 basehttp 8684 14760 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,324 log 8684 1640 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,326 log 8684 15128 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,327 basehttp 8684 2092 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,331 log 8684 16812 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,334 log 8684 14760 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,334 basehttp 8684 4508 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,337 basehttp 8684 1640 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,337 basehttp 8684 15128 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,340 log 8684 2092 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,342 basehttp 8684 16812 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,344 log 8684 4508 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,345 basehttp 8684 14760 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,348 log 8684 1640 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,351 log 8684 15128 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,354 log 8684 16812 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,355 basehttp 8684 2092 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,357 log 8684 14760 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,358 basehttp 8684 4508 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,359 basehttp 8684 1640 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,359 basehttp 8684 15128 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,362 log 8684 2092 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,363 basehttp 8684 16812 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,366 log 8684 4508 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,367 basehttp 8684 14760 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,369 log 8684 1640 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,372 log 8684 15128 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,373 basehttp 8684 2092 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,375 log 8684 16812 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,376 basehttp 8684 4508 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,378 log 8684 14760 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,380 basehttp 8684 1640 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,381 basehttp 8684 15128 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,385 log 8684 2092 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,387 log 8684 4508 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,388 basehttp 8684 16812 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,391 log 8684 1640 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,393 log 8684 15128 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,394 basehttp 8684 14760 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,395 basehttp 8684 2092 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,395 basehttp 8684 4508 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,401 log 8684 16812 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,403 basehttp 8684 1640 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,408 log 8684 14760 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,410 log 8684 2092 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,413 log 8684 4508 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,413 basehttp 8684 15128 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,415 basehttp 8684 16812 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,417 log 8684 1640 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,419 basehttp 8684 14760 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,420 basehttp 8684 2092 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,423 log 8684 15128 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,426 log 8684 16812 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,427 basehttp 8684 4508 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,432 log 8684 14760 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,435 log 8684 2092 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,435 basehttp 8684 1640 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,438 basehttp 8684 15128 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,439 basehttp 8684 16812 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,443 log 8684 4508 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,444 basehttp 8684 14760 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,448 basehttp 8684 2092 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,455 log 8684 1640 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,458 log 8684 15128 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,460 log 8684 16812 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,465 log 8684 14760 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,470 log 8684 2092 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,470 basehttp 8684 4508 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,471 basehttp 8684 1640 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,472 basehttp 8684 15128 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,473 basehttp 8684 16812 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,473 basehttp 8684 14760 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,476 log 8684 4508 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,476 basehttp 8684 2092 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,480 log 8684 1640 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,484 log 8684 15128 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,486 log 8684 16812 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,488 log 8684 14760 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,491 log 8684 2092 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,492 basehttp 8684 4508 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,493 basehttp 8684 1640 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,494 basehttp 8684 15128 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,495 basehttp 8684 16812 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,496 basehttp 8684 2092 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,497 basehttp 8684 14760 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,501 log 8684 4508 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,504 log 8684 1640 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,507 log 8684 15128 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,510 log 8684 16812 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,513 log 8684 2092 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,517 log 8684 14760 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,518 basehttp 8684 4508 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,519 basehttp 8684 1640 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,519 basehttp 8684 15128 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,520 basehttp 8684 16812 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,521 basehttp 8684 2092 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,524 log 8684 4508 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,524 basehttp 8684 14760 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,526 log 8684 1640 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,529 log 8684 15128 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,532 log 8684 16812 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,535 log 8684 2092 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,538 log 8684 14760 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,539 basehttp 8684 4508 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,540 basehttp 8684 1640 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,541 basehttp 8684 15128 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,542 basehttp 8684 16812 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,543 basehttp 8684 2092 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,547 log 8684 4508 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,550 log 8684 1640 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,550 basehttp 8684 14760 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,553 log 8684 15128 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,556 log 8684 16812 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,558 log 8684 2092 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,559 basehttp 8684 4508 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,565 log 8684 14760 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,566 basehttp 8684 1640 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,568 basehttp 8684 15128 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,569 basehttp 8684 16812 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,571 log 8684 4508 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,572 basehttp 8684 2092 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,574 log 8684 1640 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,577 log 8684 15128 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,577 basehttp 8684 14760 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,581 log 8684 16812 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,583 basehttp 8684 4508 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,587 log 8684 2092 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,591 log 8684 14760 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,592 basehttp 8684 1640 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,592 basehttp 8684 15128 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,594 log 8684 4508 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,595 basehttp 8684 2092 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,596 basehttp 8684 16812 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,600 basehttp 8684 14760 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,603 log 8684 1640 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,605 log 8684 15128 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,609 log 8684 2092 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,609 basehttp 8684 4508 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,612 log 8684 16812 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,617 log 8684 14760 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,619 basehttp 8684 1640 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,621 log 8684 4508 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,621 basehttp 8684 15128 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,621 basehttp 8684 2092 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,624 log 8684 1640 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,625 basehttp 8684 16812 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,625 basehttp 8684 14760 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,629 log 8684 15128 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,630 basehttp 8684 4508 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,633 log 8684 2092 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,637 log 8684 16812 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,639 log 8684 14760 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,640 basehttp 8684 1640 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,641 basehttp 8684 15128 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,643 log 8684 4508 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,646 basehttp 8684 2092 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,648 basehttp 8684 16812 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,653 log 8684 1640 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,653 basehttp 8684 14760 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,655 log 8684 15128 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,658 log 8684 2092 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,658 basehttp 8684 4508 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,660 log 8684 16812 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,665 log 8684 14760 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,666 basehttp 8684 1640 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,669 log 8684 4508 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,670 basehttp 8684 15128 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,670 basehttp 8684 2092 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,673 log 8684 1640 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,673 basehttp 8684 16812 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,674 basehttp 8684 14760 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,676 log 8684 15128 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,680 log 8684 2092 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,681 basehttp 8684 4508 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,684 log 8684 16812 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,684 basehttp 8684 1640 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,687 log 8684 14760 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,690 log 8684 4508 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,690 basehttp 8684 15128 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,691 basehttp 8684 2092 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,693 log 8684 1640 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,694 basehttp 8684 16812 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,698 log 8684 15128 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,699 basehttp 8684 4508 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,699 basehttp 8684 14760 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,701 log 8684 2092 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,704 log 8684 16812 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,705 basehttp 8684 1640 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,707 log 8684 4508 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,709 log 8684 14760 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,709 basehttp 8684 15128 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,714 log 8684 1640 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,714 basehttp 8684 2092 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,715 basehttp 8684 16812 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,716 basehttp 8684 4508 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,718 log 8684 15128 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,721 log 8684 2092 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,722 basehttp 8684 14760 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,724 log 8684 16812 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,726 log 8684 4508 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,727 basehttp 8684 1640 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,731 log 8684 14760 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,731 basehttp 8684 15128 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,731 basehttp 8684 2092 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,735 log 8684 1640 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,735 basehttp 8684 16812 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,735 basehttp 8684 4508 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,739 log 8684 15128 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,741 log 8684 2092 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,741 basehttp 8684 14760 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,746 log 8684 16812 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,746 basehttp 8684 1640 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,749 log 8684 4508 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,752 log 8684 14760 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,753 basehttp 8684 15128 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,753 basehttp 8684 2092 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,754 basehttp 8684 16812 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,756 log 8684 1640 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,759 log 8684 15128 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,760 basehttp 8684 4508 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,760 basehttp 8684 14760 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,764 log 8684 2092 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,767 log 8684 16812 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,768 basehttp 8684 1640 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,768 basehttp 8684 15128 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,770 log 8684 4508 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,773 log 8684 14760 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,776 log 8684 1640 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,779 log 8684 15128 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,780 basehttp 8684 2092 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,780 basehttp 8684 16812 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,782 basehttp 8684 4508 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,782 basehttp 8684 1640 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,783 basehttp 8684 14760 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,785 log 8684 2092 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,786 basehttp 8684 15128 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,789 log 8684 4508 Forbidden: /api/v1/drivers/stats/
+WARNING 2025-09-16 03:22:19,791 log 8684 16812 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,793 log 8684 1640 Forbidden: /api/v1/drivers/hos_status/
+WARNING 2025-09-16 03:22:19,796 log 8684 14760 Forbidden: /api/v1/logs/daily/today/
+WARNING 2025-09-16 03:22:19,797 basehttp 8684 2092 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,799 basehttp 8684 4508 "GET /api/v1/drivers/stats/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,800 basehttp 8684 16812 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,801 basehttp 8684 1640 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 403 58
+WARNING 2025-09-16 03:22:19,802 basehttp 8684 14760 "GET /api/v1/logs/daily/today/ HTTP/1.1" 403 58
+INFO 2025-09-16 03:23:58,203 basehttp 8684 4508 "POST /api/v1/drivers/login/ HTTP/1.1" 200 378
+INFO 2025-09-16 03:23:58,454 basehttp 8684 14760 "GET /api/v1/drivers/me/ HTTP/1.1" 200 287
+INFO 2025-09-16 03:23:58,454 basehttp 8684 4508 "GET /api/v1/drivers/me/ HTTP/1.1" 200 287
+INFO 2025-09-16 03:23:58,504 basehttp 8684 16812 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 364
+INFO 2025-09-16 03:23:58,520 basehttp 8684 1640 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 364
+INFO 2025-09-16 03:23:58,528 basehttp 8684 2092 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 1547
+INFO 2025-09-16 03:23:58,531 basehttp 8684 4508 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 235
+INFO 2025-09-16 03:23:58,533 basehttp 8684 14760 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 235
+INFO 2025-09-16 03:23:58,538 basehttp 8684 15128 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 1547
+INFO 2025-09-16 03:23:58,760 basehttp 8684 4508 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 364
+INFO 2025-09-16 03:23:58,806 basehttp 8684 4508 "GET /api/v1/logs/daily/hos_summary/ HTTP/1.1" 200 444
+INFO 2025-09-16 03:23:58,822 basehttp 8684 15128 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 364
+INFO 2025-09-16 03:23:58,826 basehttp 8684 14760 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 1547
+INFO 2025-09-16 03:23:58,841 basehttp 8684 2092 "GET /api/v1/logs/daily/hos_summary/ HTTP/1.1" 200 444
+INFO 2025-09-16 03:23:58,846 basehttp 8684 16812 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 2459
+INFO 2025-09-16 03:23:58,853 basehttp 8684 1640 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 1547
+INFO 2025-09-16 03:23:58,873 basehttp 8684 4508 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 1547
+INFO 2025-09-16 03:23:58,883 basehttp 8684 15128 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 2459
+INFO 2025-09-16 03:23:58,891 basehttp 8684 14760 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 1547
+INFO 2025-09-16 03:24:03,640 basehttp 8684 16812 "POST /api/v1/drivers/logout/ HTTP/1.1" 200 31
+INFO 2025-09-16 03:24:09,479 basehttp 8684 4508 "POST /api/v1/drivers/login/ HTTP/1.1" 200 378
+INFO 2025-09-16 03:24:09,654 basehttp 8684 15128 "GET /api/v1/drivers/me/ HTTP/1.1" 200 287
+INFO 2025-09-16 03:24:09,654 basehttp 8684 14760 "GET /api/v1/drivers/me/ HTTP/1.1" 200 287
+INFO 2025-09-16 03:24:09,693 basehttp 8684 4508 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 364
+INFO 2025-09-16 03:24:09,706 basehttp 8684 16812 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 235
+INFO 2025-09-16 03:24:09,714 basehttp 8684 2092 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 1547
+INFO 2025-09-16 03:24:09,714 basehttp 8684 1640 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 364
+INFO 2025-09-16 03:24:09,722 basehttp 8684 15128 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 1547
+INFO 2025-09-16 03:24:09,728 basehttp 8684 14760 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 235
+INFO 2025-09-16 03:24:09,904 basehttp 8684 4508 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 364
+INFO 2025-09-16 03:24:09,927 basehttp 8684 16812 "GET /api/v1/logs/daily/hos_summary/ HTTP/1.1" 200 444
+INFO 2025-09-16 03:24:09,931 basehttp 8684 2092 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 364
+INFO 2025-09-16 03:24:09,945 basehttp 8684 15128 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 1547
+INFO 2025-09-16 03:24:09,945 basehttp 8684 1640 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 1547
+INFO 2025-09-16 03:24:09,956 basehttp 8684 14760 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 2459
+INFO 2025-09-16 03:24:09,960 basehttp 8684 4508 "GET /api/v1/logs/daily/hos_summary/ HTTP/1.1" 200 444
+INFO 2025-09-16 03:24:09,980 basehttp 8684 16812 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 1547
+INFO 2025-09-16 03:24:09,992 basehttp 8684 2092 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 2459
+INFO 2025-09-16 03:24:09,996 basehttp 8684 15128 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 1547
+INFO 2025-09-16 03:24:13,234 basehttp 8684 14760 "GET /api/v1/drivers/me/ HTTP/1.1" 200 287
+INFO 2025-09-16 03:24:13,250 basehttp 8684 2092 "GET /api/v1/drivers/me/ HTTP/1.1" 200 287
+INFO 2025-09-16 03:24:13,257 basehttp 8684 4508 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 364
+INFO 2025-09-16 03:24:13,262 basehttp 8684 15128 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 364
+INFO 2025-09-16 03:24:13,270 basehttp 8684 16812 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 2459
+INFO 2025-09-16 03:24:13,271 basehttp 8684 1640 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 2459
+INFO 2025-09-16 03:24:13,363 basehttp 8684 14760 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 2459
+INFO 2025-09-16 03:24:13,377 basehttp 8684 4508 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 2459
+INFO 2025-09-16 03:24:19,895 basehttp 8684 15128 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 364
+INFO 2025-09-16 03:24:19,895 basehttp 8684 16812 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 1547
+INFO 2025-09-16 03:24:19,910 basehttp 8684 4508 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 1547
+INFO 2025-09-16 03:24:19,910 basehttp 8684 14760 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 364
+INFO 2025-09-16 03:24:19,917 basehttp 8684 2092 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 235
+INFO 2025-09-16 03:24:19,918 basehttp 8684 1640 "GET /api/v1/drivers/stats/ HTTP/1.1" 200 235
+INFO 2025-09-16 03:24:20,022 basehttp 8684 15128 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 364
+INFO 2025-09-16 03:24:20,040 basehttp 8684 2092 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 364
+INFO 2025-09-16 03:24:20,047 basehttp 8684 4508 "GET /api/v1/logs/daily/hos_summary/ HTTP/1.1" 200 444
+INFO 2025-09-16 03:24:20,050 basehttp 8684 16812 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 1547
+INFO 2025-09-16 03:24:20,055 basehttp 8684 1640 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 1547
+INFO 2025-09-16 03:24:20,064 basehttp 8684 14760 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 2459
+INFO 2025-09-16 03:24:20,072 basehttp 8684 15128 "GET /api/v1/logs/daily/hos_summary/ HTTP/1.1" 200 444
+INFO 2025-09-16 03:24:20,089 basehttp 8684 2092 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 1547
+INFO 2025-09-16 03:24:20,094 basehttp 8684 4508 "GET /api/v1/drivers/recent_trips/ HTTP/1.1" 200 2459
+INFO 2025-09-16 03:24:20,095 basehttp 8684 16812 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 1547
+INFO 2025-09-16 03:29:20,370 basehttp 8684 16940 "GET /api/v1/drivers/hos_status/ HTTP/1.1" 200 364
+INFO 2025-09-16 03:29:20,377 basehttp 8684 1600 "GET /api/v1/logs/daily/hos_summary/ HTTP/1.1" 200 444
+INFO 2025-09-16 03:29:20,377 basehttp 8684 17808 "GET /api/v1/logs/daily/today/ HTTP/1.1" 200 1547
