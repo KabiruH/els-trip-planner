@@ -1,0 +1,20 @@
+# Django core
+Django>=5.0,<6.0
+
+# WSGI server for production
+gunicorn>=21.2.0
+
+# PostgreSQL database adapter
+psycopg2-binary>=2.9
+
+# For managing environment variables
+python-dotenv>=1.0
+
+# If using Django REST Framework
+djangorestframework>=3.15
+
+# If you plan to handle CORS
+django-cors-headers>=4.3
+
+# If you use whitenoise for serving static files
+whitenoise>=6.6
