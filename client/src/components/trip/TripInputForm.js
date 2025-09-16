@@ -1,5 +1,5 @@
 // src/components/trip/TripInputForm.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Card,
   CardContent,
@@ -28,6 +28,18 @@ import {
 // Import API services
 import { tripService, apiUtils } from '../../services/api';
 
+// Import Leaflet
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import "leaflet/dist/leaflet.css";
+import L from "leaflet";
+
+// Default marker fix for React-Leaflet + Webpack
+const DefaultIcon = L.icon({
+  iconUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png",
+  shadowUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png"
+});
+L.Marker.prototype.options.icon = DefaultIcon;
+
 const TripInputForm = ({ 
   onTripSubmit,
   initialData = {},
@@ -46,6 +58,13 @@ const TripInputForm = ({
   });
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Store coordinates for map display
+  const [coords, setCoords] = useState({
+    currentLocation: null,
+    pickupLocation: null,
+    dropoffLocation: null
+  });
 
   const steps = [
     { 
@@ -114,10 +133,9 @@ const TripInputForm = ({
   };
 
   const parseLocation = (locationString) => {
-    // Simple location parser - in production you'd use a geocoding service
     const parts = locationString.split(',').map(part => part.trim());
     return {
-      lat: 0, // You'd get these from geocoding
+      lat: 0,
       lng: 0,
       address: locationString
     };
@@ -128,7 +146,6 @@ const TripInputForm = ({
 
     setIsSubmitting(true);
     try {
-      // Prepare trip data for API
       const tripData = {
         current_location: parseLocation(formData.currentLocation),
         pickup_location: parseLocation(formData.pickupLocation),
@@ -137,10 +154,7 @@ const TripInputForm = ({
         planned_start_time: new Date(formData.planned_start_time).toISOString()
       };
 
-      // Call the trip planning API
       const result = await tripService.planTrip(tripData);
-      
-      // Call the parent callback with the result
       onTripSubmit(result);
       
     } catch (err) {
@@ -149,6 +163,41 @@ const TripInputForm = ({
     } finally {
       setIsSubmitting(false);
     }
+  };
+
+  // Fetch coordinates from Nominatim API
+  useEffect(() => {
+    const fetchCoords = async (field, query) => {
+      if (!query) return;
+      try {
+        const res = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(query)}`);
+        const data = await res.json();
+        if (data && data[0]) {
+          setCoords(prev => ({ ...prev, [field]: [parseFloat(data[0].lat), parseFloat(data[0].lon)] }));
+        }
+      } catch (err) {
+        console.error("Geocoding error:", err);
+      }
+    };
+
+    fetchCoords("currentLocation", formData.currentLocation);
+    fetchCoords("pickupLocation", formData.pickupLocation);
+    fetchCoords("dropoffLocation", formData.dropoffLocation);
+  }, [formData.currentLocation, formData.pickupLocation, formData.dropoffLocation]);
+
+  const LocationMap = ({ coords, label }) => {
+    if (!coords) return null;
+    return (
+      <Box sx={{ mt: 2, mb: 2, borderRadius: 2, overflow: 'hidden' }}>
+        <Typography variant="body2" fontWeight="bold" sx={{ mb: 1 }}>{label} Map Preview</Typography>
+        <MapContainer center={coords} zoom={12} style={{ height: "250px", width: "100%" }}>
+          <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+          <Marker position={coords}>
+            <Popup>{label}</Popup>
+          </Marker>
+        </MapContainer>
+      </Box>
+    );
   };
 
   const renderStepContent = (step) => {
@@ -168,7 +217,10 @@ const TripInputForm = ({
               margin="normal"
               placeholder="Enter your current location"
             />
-            
+            {coords.currentLocation && (
+              <LocationMap coords={coords.currentLocation} label="Current Location" />
+            )}
+
             <TextField
               fullWidth
               label="Current Cycle Hours"
@@ -206,7 +258,10 @@ const TripInputForm = ({
               margin="normal"
               placeholder="e.g. Milwaukee, WI"
             />
-            
+            {coords.pickupLocation && (
+              <LocationMap coords={coords.pickupLocation} label="Pickup Location" />
+            )}
+
             <TextField
               fullWidth
               label="Dropoff Location"
@@ -219,7 +274,10 @@ const TripInputForm = ({
               margin="normal"
               placeholder="e.g. Atlanta, GA"
             />
-            
+            {coords.dropoffLocation && (
+              <LocationMap coords={coords.dropoffLocation} label="Dropoff Location" />
+            )}
+
             <TextField
               fullWidth
               label="Planned Start Time"
@@ -233,7 +291,7 @@ const TripInputForm = ({
               margin="normal"
               InputLabelProps={{ shrink: true }}
             />
-            
+
             <TextField
               fullWidth
               label="Notes (Optional)"

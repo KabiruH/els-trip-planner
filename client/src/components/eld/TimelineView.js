@@ -146,18 +146,6 @@ const TimelineView = ({
 
   const segments = getTimelineSegments();
 
-  // Create sample data if no real entries exist
-  const displaySegments = segments.length > 0 ? segments : [
-    { 
-      time: '06:00', 
-      status: 'on_duty_not_driving', 
-      location: 'Terminal', 
-      notes: 'Pre-trip inspection',
-      duration: '1h',
-      index: 0 
-    }
-  ];
-
   if (loading) {
     return (
       <Card>
@@ -235,130 +223,11 @@ const TimelineView = ({
               }}
             />
             
-            {displaySegments.map((segment, index) => (
-              <Box key={segment.id || index} sx={{ position: 'relative', mb: 3 }}>
-                {/* Timeline Dot */}
-                <Avatar
-                  sx={{
-                    position: 'absolute',
-                    left: -32,
-                    top: 8,
-                    width: 24,
-                    height: 24,
-                    bgcolor: `${dutyStatuses[segment.status]?.color || 'primary'}.main`,
-                    fontSize: 12,
-                    boxShadow: 2
-                  }}
-                >
-                  {dutyStatuses[segment.status]?.icon || <Build />}
-                </Avatar>
-                
-                {/* Timeline Content */}
-                <Paper
-                  sx={{
-                    p: 2,
-                    ml: 1,
-                    bgcolor: selectedEntry === index ? 'primary.50' : 'grey.50',
-                    border: selectedEntry === index ? 2 : 1,
-                    borderColor: selectedEntry === index ? 'primary.main' : 'grey.200',
-                    cursor: 'pointer',
-                    transition: 'all 0.2s ease',
-                    '&:hover': {
-                      transform: 'translateX(4px)',
-                      boxShadow: 2
-                    }
-                  }}
-                  onClick={() => setSelectedEntry(selectedEntry === index ? null : index)}
-                >
-                  <Box display="flex" justifyContent="space-between" alignItems="center" mb={1}>
-                    <Typography variant="h6" component="span">
-                      {segment.time}
-                    </Typography>
-                    <Chip
-                      label={segment.duration}
-                      size="small"
-                      variant="outlined"
-                      sx={{ bgcolor: 'white' }}
-                    />
-                  </Box>
-                  
-                  <Chip
-                    icon={dutyStatuses[segment.status]?.icon || <Build />}
-                    label={dutyStatuses[segment.status]?.label || 'Unknown Status'}
-                    color={dutyStatuses[segment.status]?.color || 'primary'}
-                    size="small"
-                    sx={{ mb: 1 }}
-                  />
-                  
-                  {segment.location && (
-                    <Box display="flex" alignItems="center" mb={0.5}>
-                      <LocationOn fontSize="small" color="action" sx={{ mr: 1 }} />
-                      <Typography variant="body2" color="text.secondary">
-                        {segment.location}
-                      </Typography>
-                    </Box>
-                  )}
-                  
-                  {segment.notes && (
-                    <Typography variant="body2" fontWeight={500}>
-                      {segment.notes}
-                    </Typography>
-                  )}
-
-                  {/* Show additional details when expanded */}
-                  {selectedEntry === index && segment.timestamp && (
-                    <Box mt={1} pt={1} borderTop={1} borderColor="grey.200">
-                      <Typography variant="caption" color="text.secondary">
-                        Timestamp: {new Date(segment.timestamp).toLocaleString()}
-                      </Typography>
-                    </Box>
-                  )}
-                </Paper>
-              </Box>
-            ))}
+           
           </Box>
         ) : (
           <Box sx={{ display: 'grid', gap: 1.5 }}>
-            {displaySegments.map((segment, index) => (
-              <Paper
-                key={segment.id || index}
-                sx={{
-                  p: 1.5,
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: 1.5,
-                  bgcolor: 'grey.50',
-                  border: 1,
-                  borderColor: 'grey.200'
-                }}
-              >
-                <Avatar
-                  sx={{
-                    width: 32,
-                    height: 32,
-                    bgcolor: `${dutyStatuses[segment.status]?.color || 'primary'}.main`,
-                    fontSize: 16
-                  }}
-                >
-                  {dutyStatuses[segment.status]?.icon || <Build />}
-                </Avatar>
-                
-                <Box flex={1}>
-                  <Typography variant="body1" fontWeight="bold">
-                    {segment.time} - {segment.duration}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    {dutyStatuses[segment.status]?.label || 'Unknown Status'}
-                    {segment.location && ` • ${segment.location}`}
-                  </Typography>
-                  {segment.notes && (
-                    <Typography variant="body2" color="text.secondary" fontStyle="italic">
-                      {segment.notes}
-                    </Typography>
-                  )}
-                </Box>
-              </Paper>
-            ))}
+          
           </Box>
         )}
 
