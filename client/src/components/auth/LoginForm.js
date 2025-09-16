@@ -1,8 +1,9 @@
+// src/components/auth/LoginForm.js
 import React, { useState } from 'react';
 
 const LoginForm = ({ onLogin, loading = false, error = null }) => {
   const [formData, setFormData] = useState({
-    driverId: '',
+    email: '',  // Changed from driverId to email
     password: ''
   });
   const [showPassword, setShowPassword] = useState(false);
@@ -92,10 +93,10 @@ const LoginForm = ({ onLogin, loading = false, error = null }) => {
       fontSize: '1.1rem',
       fontWeight: 'bold',
       color: 'white',
-      background: 'linear-gradient(45deg, #FF6B35 30%, #F7931E 90%)',
+      background: loading ? '#ccc' : 'linear-gradient(45deg, #FF6B35 30%, #F7931E 90%)',
       border: 'none',
       borderRadius: '8px',
-      cursor: 'pointer',
+      cursor: loading ? 'not-allowed' : 'pointer',
       marginTop: '16px',
       marginBottom: '16px',
       boxShadow: '0 3px 15px 2px rgba(255, 107, 53, .3)',
@@ -144,16 +145,17 @@ const LoginForm = ({ onLogin, loading = false, error = null }) => {
         )}
 
         <div style={styles.inputGroup}>
-          <label style={styles.label} htmlFor="driverId">Driver ID</label>
+          <label style={styles.label} htmlFor="email">Email Address</label>
           <div style={{ position: 'relative' }}>
-            <span style={styles.inputIcon}>👤</span>
+            <span style={styles.inputIcon}>📧</span>
             <input
               style={styles.input}
-              type="text"
-              id="driverId"
-              name="driverId"
-              value={formData.driverId}
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
               onChange={handleChange}
+              placeholder="driver@company.com"
               required
               autoFocus
               onFocus={(e) => e.target.style.borderColor = '#1976d2'}
@@ -210,8 +212,8 @@ const LoginForm = ({ onLogin, loading = false, error = null }) => {
         </button>
 
         <div style={styles.demoInfo}>
-          <div style={styles.demoText}>Demo Accounts:</div>
-          <div style={styles.demoAccounts}>001 / 002 (password: demo123)</div>
+          <div style={styles.demoText}>For testing, create an account first or</div>
+          <div style={styles.demoAccounts}>use the register option</div>
         </div>
       </form>
     </div>

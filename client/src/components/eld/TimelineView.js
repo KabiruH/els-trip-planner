@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Card,
   CardContent,
@@ -8,7 +8,9 @@ import {
   ButtonGroup,
   Chip,
   Paper,
-  Avatar
+  Avatar,
+  CircularProgress,
+  Alert
 } from '@mui/material';
 import {
   Timeline,
@@ -19,61 +21,121 @@ import {
   DirectionsCar,
   Build
 } from '@mui/icons-material';
+import { eldLogsService, authService } from '../../services/api';
 
 const TimelineView = ({ 
-  logEntries = [],
   date = new Date().toISOString().split('T')[0],
-  driverName = 'John Smith',
   showControls = true 
 }) => {
   const [selectedEntry, setSelectedEntry] = useState(null);
   const [viewMode, setViewMode] = useState('timeline');
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [logEntries, setLogEntries] = useState([]);
+  const [driverName, setDriverName] = useState('');
 
   const dutyStatuses = {
-    1: { label: 'Off Duty', color: 'success', icon: <Home /> },
-    2: { label: 'Sleeper Berth', color: 'primary', icon: <Hotel /> },
-    3: { label: 'Driving', color: 'error', icon: <DirectionsCar /> },
-    4: { label: 'On Duty', color: 'warning', icon: <Build /> }
+    'off_duty': { label: 'Off Duty', color: 'success', icon: <Home /> },
+    'sleeper_berth': { label: 'Sleeper Berth', color: 'primary', icon: <Hotel /> },
+    'driving': { label: 'Driving', color: 'error', icon: <DirectionsCar /> },
+    'on_duty_not_driving': { label: 'On Duty', color: 'warning', icon: <Build /> }
   };
 
-  const sampleEntries = logEntries.length > 0 ? logEntries : [
-    { time: '06:00', status: 4, location: 'Green Bay, WI', activity: 'Pre-trip inspection' },
-    { time: '07:00', status: 3, location: 'Green Bay, WI', activity: 'Driving to pickup' },
-    { time: '11:30', status: 1, location: 'Paw Paw, IL', activity: '30 min break' },
-    { time: '12:00', status: 3, location: 'Paw Paw, IL', activity: 'Continue driving' },
-    { time: '17:00', status: 4, location: 'Edwardsville, IL', activity: 'Post-trip inspection' },
-    { time: '18:00', status: 1, location: 'Edwardsville, IL', activity: '10 hour break' }
-  ];
+  useEffect(() => {
+    fetchTimelineData();
+    fetchDriverInfo();
+  }, [date]);
 
-  const calculateDuration = (startTime, endTime) => {
-    const [startHour, startMin] = startTime.split(':').map(Number);
-    const [endHour, endMin] = endTime.split(':').map(Number);
-    
-    let startMinutes = startHour * 60 + startMin;
-    let endMinutes = endHour * 60 + endMin;
-    
-    if (endMinutes < startMinutes) {
-      endMinutes += 24 * 60;
+  const fetchTimelineData = async () => {
+    try {
+      setLoading(true);
+      
+      // Determine which endpoint to use based on date
+      const today = new Date().toISOString().split('T')[0];
+      let logResponse;
+      
+      if (date === today) {
+        logResponse = await eldLogsService.getTodaysLog();
+      } else {
+        // For historical dates, get daily logs and filter
+        const allLogs = await eldLogsService.getDailyLogs();
+        logResponse = allLogs.find(log => log.date === date);
+      }
+
+      if (logResponse && logResponse.log_entries) {
+        // Sort entries by timestamp
+        const sortedEntries = logResponse.log_entries.sort((a, b) => 
+          new Date(a.timestamp) - new Date(b.timestamp)
+        );
+        setLogEntries(sortedEntries);
+      } else {
+        setLogEntries([]);
+      }
+
+    } catch (err) {
+      console.error('Error fetching timeline data:', err);
+      setError('Failed to load timeline data');
+    } finally {
+      setLoading(false);
     }
+  };
+
+  const fetchDriverInfo = async () => {
+    try {
+      const currentUser = authService.getCurrentUser();
+      if (currentUser) {
+        setDriverName(`${currentUser.first_name} ${currentUser.last_name}`);
+      }
+    } catch (err) {
+      console.error('Error fetching driver info:', err);
+    }
+  };
+
+  const formatTime = (timestamp) => {
+    const date = new Date(timestamp);
+    return date.toLocaleTimeString([], { 
+      hour: '2-digit', 
+      minute: '2-digit',
+      hour12: false 
+    });
+  };
+
+  const calculateDuration = (startTimestamp, endTimestamp) => {
+    if (!endTimestamp) return 'Ongoing';
     
-    const diffMinutes = endMinutes - startMinutes;
+    const start = new Date(startTimestamp);
+    const end = new Date(endTimestamp);
+    const diffMs = end - start;
+    const diffMinutes = Math.floor(diffMs / (1000 * 60));
+    
     const hours = Math.floor(diffMinutes / 60);
     const minutes = diffMinutes % 60;
     
-    return hours > 0 ? `${hours}h ${minutes}m` : `${minutes}m`;
+    if (hours > 0) {
+      return minutes > 0 ? `${hours}h ${minutes}m` : `${hours}h`;
+    }
+    return `${minutes}m`;
   };
 
   const getTimelineSegments = () => {
     const segments = [];
-    const entries = [...sampleEntries].sort((a, b) => a.time.localeCompare(b.time));
     
-    for (let i = 0; i < entries.length; i++) {
-      const entry = entries[i];
-      const nextEntry = entries[i + 1];
-      const duration = nextEntry ? calculateDuration(entry.time, nextEntry.time) : 'Ongoing';
+    for (let i = 0; i < logEntries.length; i++) {
+      const entry = logEntries[i];
+      const nextEntry = logEntries[i + 1];
+      
+      // Calculate duration
+      const duration = nextEntry 
+        ? calculateDuration(entry.timestamp, nextEntry.timestamp)
+        : calculateDuration(entry.timestamp, new Date().toISOString());
       
       segments.push({
-        ...entry,
+        id: entry.id,
+        time: formatTime(entry.timestamp),
+        timestamp: entry.timestamp,
+        status: entry.duty_status,
+        location: entry.location || 'Location not recorded',
+        notes: entry.notes || '',
         duration,
         index: i
       });
@@ -84,6 +146,40 @@ const TimelineView = ({
 
   const segments = getTimelineSegments();
 
+  // Create sample data if no real entries exist
+  const displaySegments = segments.length > 0 ? segments : [
+    { 
+      time: '06:00', 
+      status: 'on_duty_not_driving', 
+      location: 'Terminal', 
+      notes: 'Pre-trip inspection',
+      duration: '1h',
+      index: 0 
+    }
+  ];
+
+  if (loading) {
+    return (
+      <Card>
+        <CardContent>
+          <Box display="flex" justifyContent="center" alignItems="center" minHeight="200px">
+            <CircularProgress />
+          </Box>
+        </CardContent>
+      </Card>
+    );
+  }
+
+  if (error) {
+    return (
+      <Card>
+        <CardContent>
+          <Alert severity="error">{error}</Alert>
+        </CardContent>
+      </Card>
+    );
+  }
+
   return (
     <Card>
       <CardContent>
@@ -92,6 +188,9 @@ const TimelineView = ({
             <Timeline color="primary" sx={{ mr: 1 }} />
             <Typography variant="h6" component="h2">
               Daily Activity Timeline
+            </Typography>
+            <Typography variant="body2" color="text.secondary" sx={{ ml: 2 }}>
+              {new Date(date).toLocaleDateString()} • {driverName}
             </Typography>
           </Box>
           
@@ -109,11 +208,17 @@ const TimelineView = ({
                 startIcon={<ViewList />}
                 onClick={() => setViewMode('chart')}
               >
-                Chart
+                List
               </Button>
             </ButtonGroup>
           )}
         </Box>
+
+        {segments.length === 0 && (
+          <Alert severity="info" sx={{ mb: 2 }}>
+            No duty status changes recorded for this date.
+          </Alert>
+        )}
 
         {viewMode === 'timeline' ? (
           <Box sx={{ position: 'relative', pl: 5 }}>
@@ -130,8 +235,8 @@ const TimelineView = ({
               }}
             />
             
-            {segments.map((segment, index) => (
-              <Box key={index} sx={{ position: 'relative', mb: 3 }}>
+            {displaySegments.map((segment, index) => (
+              <Box key={segment.id || index} sx={{ position: 'relative', mb: 3 }}>
                 {/* Timeline Dot */}
                 <Avatar
                   sx={{
@@ -140,12 +245,12 @@ const TimelineView = ({
                     top: 8,
                     width: 24,
                     height: 24,
-                    bgcolor: `${dutyStatuses[segment.status].color}.main`,
+                    bgcolor: `${dutyStatuses[segment.status]?.color || 'primary'}.main`,
                     fontSize: 12,
                     boxShadow: 2
                   }}
                 >
-                  {dutyStatuses[segment.status].icon}
+                  {dutyStatuses[segment.status]?.icon || <Build />}
                 </Avatar>
                 
                 {/* Timeline Content */}
@@ -178,9 +283,9 @@ const TimelineView = ({
                   </Box>
                   
                   <Chip
-                    icon={dutyStatuses[segment.status].icon}
-                    label={dutyStatuses[segment.status].label}
-                    color={dutyStatuses[segment.status].color}
+                    icon={dutyStatuses[segment.status]?.icon || <Build />}
+                    label={dutyStatuses[segment.status]?.label || 'Unknown Status'}
+                    color={dutyStatuses[segment.status]?.color || 'primary'}
                     size="small"
                     sx={{ mb: 1 }}
                   />
@@ -194,10 +299,19 @@ const TimelineView = ({
                     </Box>
                   )}
                   
-                  {segment.activity && (
+                  {segment.notes && (
                     <Typography variant="body2" fontWeight={500}>
-                      {segment.activity}
+                      {segment.notes}
                     </Typography>
+                  )}
+
+                  {/* Show additional details when expanded */}
+                  {selectedEntry === index && segment.timestamp && (
+                    <Box mt={1} pt={1} borderTop={1} borderColor="grey.200">
+                      <Typography variant="caption" color="text.secondary">
+                        Timestamp: {new Date(segment.timestamp).toLocaleString()}
+                      </Typography>
+                    </Box>
                   )}
                 </Paper>
               </Box>
@@ -205,9 +319,9 @@ const TimelineView = ({
           </Box>
         ) : (
           <Box sx={{ display: 'grid', gap: 1.5 }}>
-            {segments.map((segment, index) => (
+            {displaySegments.map((segment, index) => (
               <Paper
-                key={index}
+                key={segment.id || index}
                 sx={{
                   p: 1.5,
                   display: 'flex',
@@ -222,11 +336,11 @@ const TimelineView = ({
                   sx={{
                     width: 32,
                     height: 32,
-                    bgcolor: `${dutyStatuses[segment.status].color}.main`,
+                    bgcolor: `${dutyStatuses[segment.status]?.color || 'primary'}.main`,
                     fontSize: 16
                   }}
                 >
-                  {dutyStatuses[segment.status].icon}
+                  {dutyStatuses[segment.status]?.icon || <Build />}
                 </Avatar>
                 
                 <Box flex={1}>
@@ -234,17 +348,26 @@ const TimelineView = ({
                     {segment.time} - {segment.duration}
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
-                    {dutyStatuses[segment.status].label}
+                    {dutyStatuses[segment.status]?.label || 'Unknown Status'}
                     {segment.location && ` • ${segment.location}`}
                   </Typography>
-                  {segment.activity && (
+                  {segment.notes && (
                     <Typography variant="body2" color="text.secondary" fontStyle="italic">
-                      {segment.activity}
+                      {segment.notes}
                     </Typography>
                   )}
                 </Box>
               </Paper>
             ))}
+          </Box>
+        )}
+
+        {/* Summary Statistics */}
+        {segments.length > 0 && (
+          <Box mt={3} pt={2} borderTop={1} borderColor="grey.200">
+            <Typography variant="body2" color="text.secondary" align="center">
+              {segments.length} duty status change{segments.length !== 1 ? 's' : ''} recorded
+            </Typography>
           </Box>
         )}
       </CardContent>

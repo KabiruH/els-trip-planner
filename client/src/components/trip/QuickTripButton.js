@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+// src/components/trip/QuickTripButtons.js
+import React, { useState, useEffect } from 'react';
 import {
   Card,
   CardContent,
@@ -19,6 +20,9 @@ import {
   FlashOn
 } from '@mui/icons-material';
 
+// Import API services
+import { tripService, driverService } from '../../services/api';
+
 const QuickTripButton = ({ 
   route,
   onQuickTripSelect,
@@ -37,20 +41,6 @@ const QuickTripButton = ({
       setIsLoading(false);
     }
   };
-
-  const defaultRoute = {
-    id: 'route-1',
-    name: 'Chicago to Atlanta',
-    from: 'Chicago, IL',
-    to: 'Atlanta, GA',
-    distance: '716 miles',
-    estimatedTime: '11h 30m',
-    frequentRoute: true,
-    lastUsed: '2 days ago',
-    icon: '🚛'
-  };
-
-  const routeData = route || defaultRoute;
 
   return (
     <Card
@@ -82,18 +72,18 @@ const QuickTripButton = ({
               boxShadow: 2
             }}
           >
-            {routeData.icon || <LocalShipping />}
+            {route.icon || <LocalShipping />}
           </Avatar>
           
           <Box flex={1}>
             <Typography variant="h6" component="div" gutterBottom>
-              {routeData.name}
+              {route.name}
             </Typography>
             
             <Box display="flex" alignItems="center" mb={0.5}>
               <LocationOn fontSize="small" color="action" sx={{ mr: 0.5 }} />
               <Typography variant="body2" color="text.secondary">
-                {routeData.from} → {routeData.to}
+                {route.from} → {route.to}
               </Typography>
             </Box>
             
@@ -101,20 +91,20 @@ const QuickTripButton = ({
               <Box display="flex" alignItems="center">
                 <Straighten fontSize="small" color="action" sx={{ mr: 0.5 }} />
                 <Typography variant="body2" color="text.secondary">
-                  {routeData.distance}
+                  {route.distance}
                 </Typography>
               </Box>
               <Box display="flex" alignItems="center">
                 <Schedule fontSize="small" color="action" sx={{ mr: 0.5 }} />
                 <Typography variant="body2" color="text.secondary">
-                  {routeData.estimatedTime}
+                  {route.estimatedTime}
                 </Typography>
               </Box>
             </Box>
             
-            {routeData.lastUsed && (
+            {route.lastUsed && (
               <Chip
-                label={`Last used: ${routeData.lastUsed}`}
+                label={`Last used: ${route.lastUsed}`}
                 size="small"
                 color="warning"
                 variant="outlined"
@@ -159,39 +149,103 @@ const QuickTripButton = ({
   );
 };
 
-const QuickTripButtons = ({ routes = [], onQuickTripSelect, title = "Quick Routes" }) => {
-  const sampleRoutes = routes.length > 0 ? routes : [
+const QuickTripButtons = ({ onQuickTripSelect, title = "Quick Routes" }) => {
+  const [routes, setRoutes] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchRecentTrips = async () => {
+      try {
+        setLoading(true);
+        // Get recent trips from API and convert to route format
+        const recentTrips = await driverService.getRecentTrips();
+        
+        const quickRoutes = recentTrips
+          .filter(trip => trip.status === 'completed') // Only show completed trips
+          .slice(0, 3) // Limit to 3 most recent
+          .map(trip => ({
+            id: trip.id,
+            name: `${getLocationName(trip.pickup_location)} to ${getLocationName(trip.dropoff_location)}`,
+            from: trip.pickup_location.address || 'Unknown',
+            to: trip.dropoff_location.address || 'Unknown',
+            distance: trip.total_distance ? `${trip.total_distance} miles` : 'N/A',
+            estimatedTime: trip.estimated_duration ? formatDuration(trip.estimated_duration) : 'N/A',
+            lastUsed: formatLastUsed(trip.created_at),
+            icon: '🚛',
+            // Store original trip data for planning
+            pickup_location: trip.pickup_location,
+            dropoff_location: trip.dropoff_location
+          }));
+
+        setRoutes(quickRoutes);
+      } catch (error) {
+        console.error('Failed to fetch recent trips:', error);
+        // Fallback to sample routes
+        setRoutes(getSampleRoutes());
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchRecentTrips();
+  }, []);
+
+  const getLocationName = (location) => {
+    if (!location) return 'Unknown';
+    return location.address?.split(',')[0] || location.address || 'Unknown';
+  };
+
+  const formatDuration = (duration) => {
+    // Convert duration string (e.g., "11:30:00") to readable format
+    if (typeof duration === 'string' && duration.includes(':')) {
+      const [hours, minutes] = duration.split(':');
+      return `${hours}h ${minutes}m`;
+    }
+    return duration;
+  };
+
+  const formatLastUsed = (dateString) => {
+    const date = new Date(dateString);
+    const now = new Date();
+    const diffInDays = Math.floor((now - date) / (1000 * 60 * 60 * 24));
+    
+    if (diffInDays === 0) return 'Today';
+    if (diffInDays === 1) return 'Yesterday';
+    if (diffInDays < 7) return `${diffInDays} days ago`;
+    if (diffInDays < 30) return `${Math.floor(diffInDays / 7)} weeks ago`;
+    return `${Math.floor(diffInDays / 30)} months ago`;
+  };
+
+  const getSampleRoutes = () => [
     {
-      id: 'route-1',
+      id: 'sample-1',
       name: 'Chicago to Atlanta',
       from: 'Chicago, IL',
       to: 'Atlanta, GA',
       distance: '716 miles',
       estimatedTime: '11h 30m',
-      lastUsed: '2 days ago',
+      lastUsed: 'No recent trips',
       icon: '🚛'
-    },
-    {
-      id: 'route-2',
-      name: 'Milwaukee to Detroit',
-      from: 'Milwaukee, WI',
-      to: 'Detroit, MI',
-      distance: '377 miles',
-      estimatedTime: '6h 15m',
-      lastUsed: '5 days ago',
-      icon: '🚚'
-    },
-    {
-      id: 'route-3',
-      name: 'Green Bay to Minneapolis',
-      from: 'Green Bay, WI',
-      to: 'Minneapolis, MN',
-      distance: '304 miles',
-      estimatedTime: '5h 45m',
-      lastUsed: '1 week ago',
-      icon: '🚐'
     }
   ];
+
+  if (loading) {
+    return (
+      <Card>
+        <CardContent>
+          <Box display="flex" alignItems="center" mb={2}>
+            <FlashOn color="warning" sx={{ mr: 1 }} />
+            <Typography variant="h6" component="h3">
+              {title}
+            </Typography>
+          </Box>
+          <Box display="flex" justifyContent="center" py={4}>
+            <CircularProgress />
+          </Box>
+        </CardContent>
+      </Card>
+    );
+  }
 
   return (
     <Card>
@@ -208,7 +262,7 @@ const QuickTripButtons = ({ routes = [], onQuickTripSelect, title = "Quick Route
         </Typography>
         
         <Grid container spacing={1.5}>
-          {sampleRoutes.map((route) => (
+          {routes.map((route) => (
             <Grid item xs={12} key={route.id}>
               <QuickTripButton
                 route={route}
@@ -217,6 +271,15 @@ const QuickTripButtons = ({ routes = [], onQuickTripSelect, title = "Quick Route
             </Grid>
           ))}
         </Grid>
+
+        {routes.length === 0 && (
+          <Box textAlign="center" py={3}>
+            <LocalShipping sx={{ fontSize: 40, color: 'grey.400', mb: 1 }} />
+            <Typography variant="body2" color="text.secondary">
+              Complete some trips to see quick routes here
+            </Typography>
+          </Box>
+        )}
       </CardContent>
     </Card>
   );

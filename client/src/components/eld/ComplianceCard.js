@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Card,
   CardContent,
@@ -6,7 +6,8 @@ import {
   Box,
   Grid,
   LinearProgress,
-  Alert
+  Alert,
+  CircularProgress
 } from '@mui/material';
 import {
   Assessment,
@@ -16,14 +17,82 @@ import {
   Schedule,
   CalendarToday
 } from '@mui/icons-material';
+import { driverService, eldLogsService } from '../../services/api';
 
-const ComplianceCard = ({ 
-  currentCycleHours = 0, 
-  drivingHoursToday = 0, 
-  onDutyHoursToday = 0, 
-  lastBreakTime = null,
-  nextRequiredBreak = null 
-}) => {
+const ComplianceCard = () => {
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [hosData, setHosData] = useState({
+    currentCycleHours: 0,
+    drivingHoursToday: 0,
+    onDutyHoursToday: 0,
+    lastBreakTime: null,
+    nextRequiredBreak: null,
+    canDrive: true,
+    cycleTimeRemaining: 70,
+    drivingTimeRemaining: 11,
+    onDutyTimeRemaining: 14
+  });
+
+  useEffect(() => {
+    fetchHOSData();
+    
+    // Refresh data every 5 minutes
+    const interval = setInterval(fetchHOSData, 5 * 60 * 1000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const fetchHOSData = async () => {
+    try {
+      setLoading(true);
+      
+      // Fetch HOS status and today's log in parallel
+      const [hosStatus, hosSummary, todaysLog] = await Promise.all([
+        driverService.getHOSStatus(),
+        eldLogsService.getHOSSummary(),
+        eldLogsService.getTodaysLog()
+      ]);
+
+      // Calculate today's hours from log entries
+      const calculateTodaysHours = (logEntries) => {
+        let drivingHours = 0;
+        let onDutyHours = 0;
+        
+        if (logEntries && logEntries.length > 0) {
+          logEntries.forEach(entry => {
+            if (entry.duty_status === 'driving') {
+              drivingHours += entry.duration || 0;
+            } else if (entry.duty_status === 'on_duty_not_driving') {
+              onDutyHours += entry.duration || 0;
+            }
+          });
+        }
+        
+        return { drivingHours, onDutyHours };
+      };
+
+      const { drivingHours, onDutyHours } = calculateTodaysHours(todaysLog?.log_entries || []);
+
+      setHosData({
+        currentCycleHours: hosSummary?.cycle_hours_used || 0,
+        drivingHoursToday: drivingHours,
+        onDutyHoursToday: onDutyHours + drivingHours, // On-duty includes driving
+        lastBreakTime: hosStatus?.last_break_time,
+        nextRequiredBreak: hosStatus?.next_required_break,
+        canDrive: hosStatus?.can_drive ?? true,
+        cycleTimeRemaining: hosStatus?.cycle_time_remaining || 70,
+        drivingTimeRemaining: hosStatus?.driving_time_remaining || 11,
+        onDutyTimeRemaining: hosStatus?.on_duty_time_remaining || 14
+      });
+
+    } catch (err) {
+      console.error('Error fetching HOS data:', err);
+      setError('Failed to load HOS compliance data');
+    } finally {
+      setLoading(false);
+    }
+  };
+
   // HOS Rules (70-hour/8-day cycle)
   const maxCycleHours = 70;
   const maxDrivingDaily = 11;
@@ -31,16 +100,16 @@ const ComplianceCard = ({
   const requiredBreakAfter = 8; // hours of driving
 
   // Calculate compliance status
-  const cycleStatus = currentCycleHours >= maxCycleHours ? 'violation' : 
-                     currentCycleHours >= maxCycleHours * 0.9 ? 'warning' : 'good';
+  const cycleStatus = hosData.currentCycleHours >= maxCycleHours ? 'violation' : 
+                     hosData.currentCycleHours >= maxCycleHours * 0.9 ? 'warning' : 'good';
   
-  const drivingStatus = drivingHoursToday >= maxDrivingDaily ? 'violation' : 
-                       drivingHoursToday >= maxDrivingDaily * 0.9 ? 'warning' : 'good';
+  const drivingStatus = hosData.drivingHoursToday >= maxDrivingDaily ? 'violation' : 
+                       hosData.drivingHoursToday >= maxDrivingDaily * 0.9 ? 'warning' : 'good';
   
-  const onDutyStatus = onDutyHoursToday >= maxOnDutyDaily ? 'violation' : 
-                      onDutyHoursToday >= maxOnDutyDaily * 0.9 ? 'warning' : 'good';
+  const onDutyStatus = hosData.onDutyHoursToday >= maxOnDutyDaily ? 'violation' : 
+                      hosData.onDutyHoursToday >= maxOnDutyDaily * 0.9 ? 'warning' : 'good';
 
-  const needsBreak = drivingHoursToday >= requiredBreakAfter && !lastBreakTime;
+  const needsBreak = hosData.drivingHoursToday >= requiredBreakAfter && !hosData.lastBreakTime;
 
   const getStatusColor = (status) => {
     switch (status) {
@@ -64,6 +133,36 @@ const ComplianceCard = ({
     return Math.min((current / max) * 100, 100);
   };
 
+  const formatTime = (timeString) => {
+    if (!timeString) return null;
+    return new Date(timeString).toLocaleTimeString([], { 
+      hour: '2-digit', 
+      minute: '2-digit' 
+    });
+  };
+
+  if (loading) {
+    return (
+      <Card>
+        <CardContent>
+          <Box display="flex" justifyContent="center" alignItems="center" minHeight="200px">
+            <CircularProgress />
+          </Box>
+        </CardContent>
+      </Card>
+    );
+  }
+
+  if (error) {
+    return (
+      <Card>
+        <CardContent>
+          <Alert severity="error">{error}</Alert>
+        </CardContent>
+      </Card>
+    );
+  }
+
   return (
     <Card>
       <CardContent>
@@ -72,6 +171,15 @@ const ComplianceCard = ({
           <Typography variant="h6" component="h3">
             HOS Compliance Status
           </Typography>
+          {!hosData.canDrive && (
+            <Alert 
+              severity="error" 
+              sx={{ ml: 2, py: 0 }}
+              icon={<Cancel />}
+            >
+              CANNOT DRIVE
+            </Alert>
+          )}
         </Box>
 
         <Grid container spacing={2} mb={2}>
@@ -84,17 +192,20 @@ const ComplianceCard = ({
                 </Typography>
                 <Box display="flex" alignItems="center" gap={1}>
                   <Typography variant="body1" fontWeight="bold" color={getStatusColor(cycleStatus) + '.main'}>
-                    {currentCycleHours}/{maxCycleHours}h
+                    {hosData.currentCycleHours.toFixed(1)}/{maxCycleHours}h
                   </Typography>
                   {getStatusIcon(cycleStatus)}
                 </Box>
               </Box>
               <LinearProgress
                 variant="determinate"
-                value={getProgressValue(currentCycleHours, maxCycleHours)}
+                value={getProgressValue(hosData.currentCycleHours, maxCycleHours)}
                 color={getStatusColor(cycleStatus)}
                 sx={{ height: 8, borderRadius: 1 }}
               />
+              <Typography variant="caption" color="text.secondary" sx={{ mt: 0.5, display: 'block' }}>
+                {hosData.cycleTimeRemaining.toFixed(1)}h remaining
+              </Typography>
             </Box>
           </Grid>
 
@@ -107,17 +218,20 @@ const ComplianceCard = ({
                 </Typography>
                 <Box display="flex" alignItems="center" gap={1}>
                   <Typography variant="body1" fontWeight="bold" color={getStatusColor(drivingStatus) + '.main'}>
-                    {drivingHoursToday}/{maxDrivingDaily}h
+                    {hosData.drivingHoursToday.toFixed(1)}/{maxDrivingDaily}h
                   </Typography>
                   {getStatusIcon(drivingStatus)}
                 </Box>
               </Box>
               <LinearProgress
                 variant="determinate"
-                value={getProgressValue(drivingHoursToday, maxDrivingDaily)}
+                value={getProgressValue(hosData.drivingHoursToday, maxDrivingDaily)}
                 color={getStatusColor(drivingStatus)}
                 sx={{ height: 8, borderRadius: 1 }}
               />
+              <Typography variant="caption" color="text.secondary" sx={{ mt: 0.5, display: 'block' }}>
+                {hosData.drivingTimeRemaining.toFixed(1)}h remaining
+              </Typography>
             </Box>
           </Grid>
 
@@ -130,17 +244,20 @@ const ComplianceCard = ({
                 </Typography>
                 <Box display="flex" alignItems="center" gap={1}>
                   <Typography variant="body1" fontWeight="bold" color={getStatusColor(onDutyStatus) + '.main'}>
-                    {onDutyHoursToday}/{maxOnDutyDaily}h
+                    {hosData.onDutyHoursToday.toFixed(1)}/{maxOnDutyDaily}h
                   </Typography>
                   {getStatusIcon(onDutyStatus)}
                 </Box>
               </Box>
               <LinearProgress
                 variant="determinate"
-                value={getProgressValue(onDutyHoursToday, maxOnDutyDaily)}
+                value={getProgressValue(hosData.onDutyHoursToday, maxOnDutyDaily)}
                 color={getStatusColor(onDutyStatus)}
                 sx={{ height: 8, borderRadius: 1 }}
               />
+              <Typography variant="caption" color="text.secondary" sx={{ mt: 0.5, display: 'block' }}>
+                {hosData.onDutyTimeRemaining.toFixed(1)}h remaining
+              </Typography>
             </Box>
           </Grid>
         </Grid>
@@ -157,14 +274,21 @@ const ComplianceCard = ({
         )}
 
         {/* Next required break */}
-        {nextRequiredBreak && (
+        {hosData.nextRequiredBreak && (
           <Alert 
             icon={<CalendarToday />}
             severity="info" 
             sx={{ mt: 1.5 }}
           >
-            Next required break: {nextRequiredBreak}
+            Next required break: {formatTime(hosData.nextRequiredBreak)}
           </Alert>
+        )}
+
+        {/* Last break info */}
+        {hosData.lastBreakTime && (
+          <Typography variant="caption" color="text.secondary" sx={{ mt: 1, display: 'block' }}>
+            Last break: {formatTime(hosData.lastBreakTime)}
+          </Typography>
         )}
       </CardContent>
     </Card>

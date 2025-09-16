@@ -1,0 +1,28 @@
+{
+    "python.pythonPath": "./venv/Scripts/python.exe",
+    "python.defaultInterpreterPath": "./venv/Scripts/python.exe",
+    "python.terminal.activateEnvironment": true,
+    "python.terminal.activateEnvInCurrentTerminal": true,
+    
+    "python.analysis.extraPaths": [
+        "./",
+        "./apps"
+    ],
+    
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": true,
+    
+    "emmet.includeLanguages": {
+        "django-html": "html"
+    },
+    
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnSave": true
+    },
+    
+    "files.associations": {
+        "*.html": "django-html"
+    }
+}

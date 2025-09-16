@@ -1,3 +1,4 @@
+// src/components/trip/TripInputForm.js
 import React, { useState } from 'react';
 import {
   Card,
@@ -24,6 +25,9 @@ import {
   LocalShipping
 } from '@mui/icons-material';
 
+// Import API services
+import { tripService, apiUtils } from '../../services/api';
+
 const TripInputForm = ({ 
   onTripSubmit,
   initialData = {},
@@ -36,29 +40,28 @@ const TripInputForm = ({
     pickupLocation: '',
     dropoffLocation: '',
     currentCycleHours: 0,
-    driverName: '',
-    vehicleNumber: '',
-    pickupTime: '',
     notes: '',
+    planned_start_time: new Date().toISOString().slice(0, 16), // Default to now
     ...initialData
   });
   const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const steps = [
     { 
-      title: 'Driver Info', 
+      title: 'Current Status', 
       icon: <Person />,
-      description: 'Basic driver information'
+      description: 'Your current location and HOS status'
     },
     { 
       title: 'Trip Details', 
       icon: <LocationOn />,
-      description: 'Trip locations and timing'
+      description: 'Pickup and dropoff locations'
     },
     { 
-      title: 'Review', 
+      title: 'Review & Plan', 
       icon: <CheckCircle />,
-      description: 'Confirm trip details'
+      description: 'Confirm details and plan trip'
     }
   ];
 
@@ -78,24 +81,21 @@ const TripInputForm = ({
     const newErrors = {};
     
     if (step === 0) {
-      if (!formData.driverName.trim()) {
-        newErrors.driverName = 'Driver name is required';
-      }
-      if (!formData.vehicleNumber.trim()) {
-        newErrors.vehicleNumber = 'Vehicle number is required';
+      if (!formData.currentLocation.trim()) {
+        newErrors.currentLocation = 'Current location is required';
       }
       if (formData.currentCycleHours < 0 || formData.currentCycleHours > 70) {
         newErrors.currentCycleHours = 'Cycle hours must be between 0 and 70';
       }
     } else if (step === 1) {
-      if (!formData.currentLocation.trim()) {
-        newErrors.currentLocation = 'Current location is required';
-      }
       if (!formData.pickupLocation.trim()) {
         newErrors.pickupLocation = 'Pickup location is required';
       }
       if (!formData.dropoffLocation.trim()) {
         newErrors.dropoffLocation = 'Dropoff location is required';
+      }
+      if (!formData.planned_start_time) {
+        newErrors.planned_start_time = 'Start time is required';
       }
     }
     
@@ -113,9 +113,41 @@ const TripInputForm = ({
     setCurrentStep(prev => Math.max(prev - 1, 0));
   };
 
-  const handleSubmit = () => {
-    if (validateStep(1)) {
-      onTripSubmit(formData);
+  const parseLocation = (locationString) => {
+    // Simple location parser - in production you'd use a geocoding service
+    const parts = locationString.split(',').map(part => part.trim());
+    return {
+      lat: 0, // You'd get these from geocoding
+      lng: 0,
+      address: locationString
+    };
+  };
+
+  const handleSubmit = async () => {
+    if (!validateStep(1)) return;
+
+    setIsSubmitting(true);
+    try {
+      // Prepare trip data for API
+      const tripData = {
+        current_location: parseLocation(formData.currentLocation),
+        pickup_location: parseLocation(formData.pickupLocation),
+        dropoff_location: parseLocation(formData.dropoffLocation),
+        current_cycle_hours: parseFloat(formData.currentCycleHours),
+        planned_start_time: new Date(formData.planned_start_time).toISOString()
+      };
+
+      // Call the trip planning API
+      const result = await tripService.planTrip(tripData);
+      
+      // Call the parent callback with the result
+      onTripSubmit(result);
+      
+    } catch (err) {
+      console.error('Trip planning error:', err);
+      setErrors({ submit: apiUtils.formatError(err) });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -126,48 +158,36 @@ const TripInputForm = ({
           <Box>
             <TextField
               fullWidth
-              label="Driver Name"
-              name="driverName"
-              value={formData.driverName}
+              label="Current Location"
+              name="currentLocation"
+              value={formData.currentLocation}
               onChange={handleInputChange}
-              error={!!errors.driverName}
-              helperText={errors.driverName}
+              error={!!errors.currentLocation}
+              helperText={errors.currentLocation || "Where are you now? (e.g., Chicago, IL)"}
               required
               margin="normal"
-              placeholder="Enter driver name"
+              placeholder="Enter your current location"
             />
             
-            <Grid container spacing={2}>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  fullWidth
-                  label="Vehicle Number"
-                  name="vehicleNumber"
-                  value={formData.vehicleNumber}
-                  onChange={handleInputChange}
-                  error={!!errors.vehicleNumber}
-                  helperText={errors.vehicleNumber}
-                  required
-                  margin="normal"
-                  placeholder="e.g. TRK-001"
-                />
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  fullWidth
-                  label="Current Cycle Hours"
-                  name="currentCycleHours"
-                  type="number"
-                  value={formData.currentCycleHours}
-                  onChange={handleInputChange}
-                  error={!!errors.currentCycleHours}
-                  helperText={errors.currentCycleHours || "0-70 hours"}
-                  required
-                  margin="normal"
-                  inputProps={{ min: 0, max: 70 }}
-                />
-              </Grid>
-            </Grid>
+            <TextField
+              fullWidth
+              label="Current Cycle Hours"
+              name="currentCycleHours"
+              type="number"
+              value={formData.currentCycleHours}
+              onChange={handleInputChange}
+              error={!!errors.currentCycleHours}
+              helperText={errors.currentCycleHours || "Hours used in current 8-day cycle (0-70)"}
+              required
+              margin="normal"
+              inputProps={{ min: 0, max: 70, step: 0.1 }}
+            />
+
+            <Alert severity="info" sx={{ mt: 2 }}>
+              <Typography variant="body2">
+                Your cycle hours help us ensure HOS compliance. Enter the total hours you've worked in the past 8 days.
+              </Typography>
+            </Alert>
           </Box>
         );
 
@@ -176,25 +196,12 @@ const TripInputForm = ({
           <Box>
             <TextField
               fullWidth
-              label="Current Location"
-              name="currentLocation"
-              value={formData.currentLocation}
-              onChange={handleInputChange}
-              error={!!errors.currentLocation}
-              helperText={errors.currentLocation}
-              required
-              margin="normal"
-              placeholder="e.g. Chicago, IL"
-            />
-            
-            <TextField
-              fullWidth
               label="Pickup Location"
               name="pickupLocation"
               value={formData.pickupLocation}
               onChange={handleInputChange}
               error={!!errors.pickupLocation}
-              helperText={errors.pickupLocation}
+              helperText={errors.pickupLocation || "Where will you pick up the load?"}
               required
               margin="normal"
               placeholder="e.g. Milwaukee, WI"
@@ -207,37 +214,37 @@ const TripInputForm = ({
               value={formData.dropoffLocation}
               onChange={handleInputChange}
               error={!!errors.dropoffLocation}
-              helperText={errors.dropoffLocation}
+              helperText={errors.dropoffLocation || "Where will you deliver the load?"}
               required
               margin="normal"
               placeholder="e.g. Atlanta, GA"
             />
             
-            <Grid container spacing={2}>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  fullWidth
-                  label="Pickup Time (Optional)"
-                  name="pickupTime"
-                  type="datetime-local"
-                  value={formData.pickupTime}
-                  onChange={handleInputChange}
-                  margin="normal"
-                  InputLabelProps={{ shrink: true }}
-                />
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  fullWidth
-                  label="Notes (Optional)"
-                  name="notes"
-                  value={formData.notes}
-                  onChange={handleInputChange}
-                  margin="normal"
-                  placeholder="Special instructions or notes"
-                />
-              </Grid>
-            </Grid>
+            <TextField
+              fullWidth
+              label="Planned Start Time"
+              name="planned_start_time"
+              type="datetime-local"
+              value={formData.planned_start_time}
+              onChange={handleInputChange}
+              error={!!errors.planned_start_time}
+              helperText={errors.planned_start_time || "When do you plan to start this trip?"}
+              required
+              margin="normal"
+              InputLabelProps={{ shrink: true }}
+            />
+            
+            <TextField
+              fullWidth
+              label="Notes (Optional)"
+              name="notes"
+              value={formData.notes}
+              onChange={handleInputChange}
+              margin="normal"
+              multiline
+              rows={2}
+              placeholder="Special instructions, cargo details, or other notes"
+            />
           </Box>
         );
 
@@ -246,33 +253,7 @@ const TripInputForm = ({
           <Box>
             <Paper sx={{ p: 2, mb: 2, bgcolor: 'grey.50' }}>
               <Typography variant="h6" gutterBottom display="flex" alignItems="center">
-                <Person sx={{ mr: 1 }} /> Trip Summary
-              </Typography>
-              <Grid container spacing={1}>
-                <Grid item xs={6}>
-                  <Typography variant="body2" color="text.secondary">Driver:</Typography>
-                </Grid>
-                <Grid item xs={6}>
-                  <Typography variant="body2" fontWeight="bold">{formData.driverName}</Typography>
-                </Grid>
-                <Grid item xs={6}>
-                  <Typography variant="body2" color="text.secondary">Vehicle:</Typography>
-                </Grid>
-                <Grid item xs={6}>
-                  <Typography variant="body2" fontWeight="bold">{formData.vehicleNumber}</Typography>
-                </Grid>
-                <Grid item xs={6}>
-                  <Typography variant="body2" color="text.secondary">Current Cycle Hours:</Typography>
-                </Grid>
-                <Grid item xs={6}>
-                  <Typography variant="body2" fontWeight="bold">{formData.currentCycleHours}h</Typography>
-                </Grid>
-              </Grid>
-            </Paper>
-
-            <Paper sx={{ p: 2, bgcolor: 'grey.50' }}>
-              <Typography variant="h6" gutterBottom display="flex" alignItems="center">
-                <LocationOn sx={{ mr: 1 }} /> Route Information
+                <Person sx={{ mr: 1 }} /> Current Status
               </Typography>
               <Grid container spacing={1}>
                 <Grid item xs={6}>
@@ -282,29 +263,39 @@ const TripInputForm = ({
                   <Typography variant="body2" fontWeight="bold">{formData.currentLocation}</Typography>
                 </Grid>
                 <Grid item xs={6}>
-                  <Typography variant="body2" color="text.secondary">Pickup Location:</Typography>
+                  <Typography variant="body2" color="text.secondary">Cycle Hours Used:</Typography>
+                </Grid>
+                <Grid item xs={6}>
+                  <Typography variant="body2" fontWeight="bold">{formData.currentCycleHours}h / 70h</Typography>
+                </Grid>
+              </Grid>
+            </Paper>
+
+            <Paper sx={{ p: 2, mb: 2, bgcolor: 'grey.50' }}>
+              <Typography variant="h6" gutterBottom display="flex" alignItems="center">
+                <LocationOn sx={{ mr: 1 }} /> Trip Details
+              </Typography>
+              <Grid container spacing={1}>
+                <Grid item xs={6}>
+                  <Typography variant="body2" color="text.secondary">Pickup:</Typography>
                 </Grid>
                 <Grid item xs={6}>
                   <Typography variant="body2" fontWeight="bold">{formData.pickupLocation}</Typography>
                 </Grid>
                 <Grid item xs={6}>
-                  <Typography variant="body2" color="text.secondary">Dropoff Location:</Typography>
+                  <Typography variant="body2" color="text.secondary">Dropoff:</Typography>
                 </Grid>
                 <Grid item xs={6}>
                   <Typography variant="body2" fontWeight="bold">{formData.dropoffLocation}</Typography>
                 </Grid>
-                {formData.pickupTime && (
-                  <>
-                    <Grid item xs={6}>
-                      <Typography variant="body2" color="text.secondary">Pickup Time:</Typography>
-                    </Grid>
-                    <Grid item xs={6}>
-                      <Typography variant="body2" fontWeight="bold">
-                        {new Date(formData.pickupTime).toLocaleString()}
-                      </Typography>
-                    </Grid>
-                  </>
-                )}
+                <Grid item xs={6}>
+                  <Typography variant="body2" color="text.secondary">Start Time:</Typography>
+                </Grid>
+                <Grid item xs={6}>
+                  <Typography variant="body2" fontWeight="bold">
+                    {new Date(formData.planned_start_time).toLocaleString()}
+                  </Typography>
+                </Grid>
                 {formData.notes && (
                   <>
                     <Grid item xs={6}>
@@ -317,6 +308,18 @@ const TripInputForm = ({
                 )}
               </Grid>
             </Paper>
+
+            {errors.submit && (
+              <Alert severity="error" sx={{ mb: 2 }}>
+                {errors.submit}
+              </Alert>
+            )}
+
+            <Alert severity="info">
+              <Typography variant="body2">
+                Click "Plan Trip" to generate an HOS-compliant route with mandatory stops and compliance checking.
+              </Typography>
+            </Alert>
           </Box>
         );
 
@@ -371,19 +374,19 @@ const TripInputForm = ({
                   <Button
                     variant="contained"
                     onClick={index === steps.length - 1 ? handleSubmit : handleNext}
-                    disabled={loading}
+                    disabled={loading || isSubmitting}
                     startIcon={index === steps.length - 1 ? <LocalShipping /> : <ArrowForward />}
                     sx={{ mr: 1 }}
                   >
                     {index === steps.length - 1 
-                      ? (loading ? 'Planning Trip...' : 'Plan Trip') 
+                      ? (isSubmitting ? 'Planning Trip...' : 'Plan Trip') 
                       : 'Next'
                     }
                   </Button>
                   {index > 0 && (
                     <Button
                       onClick={handleBack}
-                      disabled={loading}
+                      disabled={loading || isSubmitting}
                       startIcon={<ArrowBack />}
                     >
                       Back

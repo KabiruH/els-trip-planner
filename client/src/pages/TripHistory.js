@@ -1,138 +1,149 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Box,
   Typography,
   Container,
-  AppBar,
-  Toolbar,
-  Button,
   Grid,
   FormControl,
   InputLabel,
   Select,
   MenuItem,
   TextField,
-  InputAdornment
+  InputAdornment,
+  CircularProgress,
+  Alert,
+  Paper
 } from '@mui/material';
 import {
-  ArrowBack,
   Search,
-  FilterList,
-  Assignment
+  FilterList
 } from '@mui/icons-material';
+import { useNavigate } from 'react-router-dom';
 
-// Import our Material-UI components from the components folder
+// Import API services
+import { tripService, driverService, apiUtils } from '../services/api';
+
+// Import your existing components
 import { TripCardList } from '../components/trip/TripCard';
 
-const TripHistory = ({ driver = { name: 'John Smith', id: '001' } }) => {
+const TripHistory = () => {
+  const navigate = useNavigate();
+  
   const [searchTerm, setSearchTerm] = useState('');
   const [statusFilter, setStatusFilter] = useState('all');
   const [sortBy, setSortBy] = useState('newest');
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [trips, setTrips] = useState([]);
+  const [driverStats, setDriverStats] = useState(null);
 
-  // Sample trip history data
-  const allTrips = [
-    {
-      id: 'trip-001',
-      from: 'Chicago, IL',
-      to: 'Atlanta, GA',
-      status: 'completed',
-      startDate: '2025-09-10',
-      endDate: '2025-09-11',
-      distance: '716 miles',
-      duration: '11h 30m',
-      driver: 'John Smith',
-      vehicle: 'TRK-001',
-      hoursUsed: 8.5,
-      fuelStops: 2,
-      complianceStatus: 'good',
-      notes: 'On-time delivery, no issues'
-    },
-    {
-      id: 'trip-002',
-      from: 'Milwaukee, WI',
-      to: 'Detroit, MI',
-      status: 'completed',
-      startDate: '2025-09-08',
-      endDate: '2025-09-08',
-      distance: '377 miles',
-      duration: '6h 15m',
-      driver: 'John Smith',
-      vehicle: 'TRK-001',
-      hoursUsed: 6.2,
-      fuelStops: 1,
-      complianceStatus: 'good',
-      notes: 'Smooth delivery'
-    },
-    {
-      id: 'trip-003',
-      from: 'Green Bay, WI',
-      to: 'Minneapolis, MN',
-      status: 'completed',
-      startDate: '2025-09-05',
-      endDate: '2025-09-05',
-      distance: '304 miles',
-      duration: '5h 45m',
-      driver: 'John Smith',
-      vehicle: 'TRK-001',
-      hoursUsed: 5.8,
-      fuelStops: 1,
-      complianceStatus: 'good',
-      notes: 'Early arrival'
-    },
-    {
-      id: 'trip-004',
-      from: 'Madison, WI',
-      to: 'Kansas City, MO',
-      status: 'cancelled',
-      startDate: '2025-09-03',
-      distance: '589 miles',
-      duration: '9h 15m',
-      driver: 'John Smith',
-      vehicle: 'TRK-001',
-      hoursUsed: 0,
-      fuelStops: 0,
-      complianceStatus: 'n/a',
-      notes: 'Customer cancelled order'
-    },
-    {
-      id: 'trip-005',
-      from: 'Chicago, IL',
-      to: 'Denver, CO',
-      status: 'completed',
-      startDate: '2025-09-01',
-      endDate: '2025-09-02',
-      distance: '996 miles',
-      duration: '15h 20m',
-      driver: 'John Smith',
-      vehicle: 'TRK-001',
-      hoursUsed: 11.0,
-      fuelStops: 3,
-      complianceStatus: 'good',
-      notes: 'Long haul, required overnight rest'
+  useEffect(() => {
+    fetchTripHistory();
+    fetchDriverStats();
+  }, []);
+
+  const fetchTripHistory = async () => {
+    try {
+      setLoading(true);
+      
+      // Fetch all trips for the current driver
+      const response = await tripService.getTrips();
+      
+      // Handle different response formats
+      let tripsData = [];
+      if (Array.isArray(response)) {
+        tripsData = response;
+      } else if (response.results && Array.isArray(response.results)) {
+        tripsData = response.results;
+      } else if (response.data && Array.isArray(response.data)) {
+        tripsData = response.data;
+      } else {
+        tripsData = [];
+      }
+      
+      // Transform API data to match component expectations
+      const transformedTrips = tripsData.map(trip => ({
+        id: trip.id,
+        from: getLocationName(trip.pickup_location),
+        to: getLocationName(trip.dropoff_location),
+        status: trip.status,
+        startDate: trip.planned_start_time ? trip.planned_start_time.split('T')[0] : trip.created_at.split('T')[0],
+        endDate: trip.completed_at ? trip.completed_at.split('T')[0] : null,
+        distance: trip.total_distance ? `${trip.total_distance} miles` : 'N/A',
+        duration: trip.actual_duration || trip.estimated_duration || 'N/A',
+        driver: trip.driver_name || 'Current Driver',
+        vehicle: trip.vehicle_number || 'N/A',
+        hoursUsed: trip.driving_hours_used || 0,
+        fuelStops: trip.stops ? trip.stops.filter(stop => stop.type === 'fuel').length : 0,
+        complianceStatus: trip.hos_compliant ? 'good' : 'warning',
+        notes: trip.notes || 'No notes',
+        // Keep original data for detail view and pass required fields for TripCard
+        pickup_location: trip.pickup_location,
+        dropoff_location: trip.dropoff_location,
+        current_location: trip.current_location,
+        total_distance: trip.total_distance,
+        estimated_duration: trip.estimated_duration,
+        planned_start_time: trip.planned_start_time,
+        created_at: trip.created_at,
+        stops: trip.stops,
+        current_cycle_hours: trip.current_cycle_hours,
+        is_hos_compliant: trip.is_hos_compliant,
+        hos_violations: trip.hos_violations,
+        driver_email: trip.driver_email,
+        originalData: trip
+      }));
+
+      setTrips(transformedTrips);
+
+    } catch (err) {
+      console.error('Error fetching trip history:', err);
+      setError('Failed to load trip history: ' + apiUtils.formatError(err));
+    } finally {
+      setLoading(false);
     }
-  ];
+  };
 
-  const handleBackToDashboard = () => {
-    console.log('Navigating back to dashboard');
-    alert('Navigating back to dashboard...');
+  const fetchDriverStats = async () => {
+    try {
+      const stats = await driverService.getStats();
+      setDriverStats(stats);
+    } catch (err) {
+      console.error('Error fetching driver stats:', err);
+    }
+  };
+
+  const getLocationName = (location) => {
+    if (!location) return 'Unknown';
+    if (typeof location === 'string') return location;
+    return location.address || location.name || 'Unknown';
   };
 
   const handleViewDetails = (trip) => {
-    console.log('Viewing trip details:', trip);
-    alert(`Viewing details for trip: ${trip.from} → ${trip.to}`);
+    if (trip.originalData) {
+      navigate(`/trip-details/${trip.id}`, { 
+        state: { tripPlan: trip.originalData } 
+      });
+    } else {
+      console.log('Viewing trip details:', trip);
+      alert(`Viewing details for trip: ${trip.from} → ${trip.to}`);
+    }
   };
 
   const handleDeleteTrip = async (tripId) => {
-    console.log('Deleting trip:', tripId);
-    alert(`Trip ${tripId} deleted successfully!`);
-    // In real app, this would update the trips list
+    try {
+      await tripService.deleteTrip(tripId);
+      setTrips(prev => prev.filter(trip => trip.id !== tripId));
+      alert('Trip deleted successfully!');
+    } catch (err) {
+      console.error('Error deleting trip:', err);
+      alert('Failed to delete trip: ' + apiUtils.formatError(err));
+    }
   };
 
   // Filter and sort trips based on current filters
   const getFilteredTrips = () => {
-    let filtered = allTrips;
+    let filtered = trips;
 
-    // Filter by search term
     if (searchTerm) {
       filtered = filtered.filter(trip => 
         trip.from.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -141,12 +152,10 @@ const TripHistory = ({ driver = { name: 'John Smith', id: '001' } }) => {
       );
     }
 
-    // Filter by status
     if (statusFilter !== 'all') {
       filtered = filtered.filter(trip => trip.status === statusFilter);
     }
 
-    // Sort trips
     switch (sortBy) {
       case 'newest':
         filtered.sort((a, b) => new Date(b.startDate) - new Date(a.startDate));
@@ -155,13 +164,23 @@ const TripHistory = ({ driver = { name: 'John Smith', id: '001' } }) => {
         filtered.sort((a, b) => new Date(a.startDate) - new Date(b.startDate));
         break;
       case 'distance':
-        filtered.sort((a, b) => parseInt(b.distance) - parseInt(a.distance));
+        filtered.sort((a, b) => {
+          const aDistance = parseInt(a.distance) || 0;
+          const bDistance = parseInt(b.distance) || 0;
+          return bDistance - aDistance;
+        });
         break;
       case 'duration':
         filtered.sort((a, b) => {
           const getDurationMinutes = (duration) => {
-            const [hours, minutes] = duration.split('h ');
-            return parseInt(hours) * 60 + parseInt(minutes || '0');
+            if (!duration || duration === 'N/A') return 0;
+            if (duration.includes('h')) {
+              const parts = duration.split('h ');
+              const hours = parseInt(parts[0]) || 0;
+              const minutes = parseInt(parts[1]) || 0;
+              return hours * 60 + minutes;
+            }
+            return 0;
           };
           return getDurationMinutes(b.duration) - getDurationMinutes(a.duration);
         });
@@ -175,28 +194,68 @@ const TripHistory = ({ driver = { name: 'John Smith', id: '001' } }) => {
 
   const filteredTrips = getFilteredTrips();
 
-  return (
-    <Box sx={{ minHeight: '100vh', bgcolor: 'grey.100' }}>
-      {/* Header */}
-      <AppBar position="static" sx={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' }}>
-        <Toolbar>
-       
-          
-          <Box flexGrow={1}>
-            <Typography variant="h6" component="div">
-              Trip History
-            </Typography>
-            <Typography variant="body2" sx={{ opacity: 0.9 }}>
-              View and manage your delivery history
-            </Typography>
+  const calculateStats = () => {
+    if (driverStats) {
+      return {
+        completed: driverStats.total_trips_completed || 0,
+        totalHours: driverStats.total_driving_hours || 0,
+        totalMiles: driverStats.total_miles_driven || 0,
+        complianceRate: driverStats.compliance_rate || 0
+      };
+    }
+
+    const completedTrips = trips.filter(t => t.status === 'completed');
+    const totalHours = trips.reduce((sum, trip) => sum + (trip.hoursUsed || 0), 0);
+    const totalMiles = trips.reduce((sum, trip) => {
+      const miles = parseInt(trip.distance) || 0;
+      return sum + miles;
+    }, 0);
+    const complianceRate = completedTrips.length > 0 
+      ? Math.round((trips.filter(t => t.complianceStatus === 'good').length / completedTrips.length) * 100)
+      : 100;
+
+    return {
+      completed: completedTrips.length,
+      totalHours: Math.round(totalHours * 10) / 10,
+      totalMiles,
+      complianceRate
+    };
+  };
+
+  const stats = calculateStats();
+
+  if (loading) {
+    return (
+      <Box sx={{ 
+        minHeight: '100vh', 
+        bgcolor: 'grey.50',
+        pt: 3,
+        pb: 4
+      }}>
+        <Container maxWidth="lg">
+          <Box display="flex" justifyContent="center" alignItems="center" minHeight="400px">
+            <CircularProgress size={60} />
           </Box>
+        </Container>
+      </Box>
+    );
+  }
 
-          <Assignment sx={{ fontSize: 32 }} />
-        </Toolbar>
-      </AppBar>
+  return (
+    <Box sx={{ 
+      minHeight: '100vh', 
+      bgcolor: 'grey.50',
+      pt: 3,
+      pb: 4,
+      mt: 8
+    }}>
+      <Container maxWidth="lg">
+        {error && (
+          <Alert severity="error" sx={{ mb: 3 }}>
+            {error}
+          </Alert>
+        )}
 
-      {/* Main Content */}
-      <Container maxWidth="lg" sx={{ py: 3 }}>
         {/* Filters and Search */}
         <Box sx={{ mb: 3 }}>
           <Grid container spacing={2} alignItems="center">
@@ -207,6 +266,12 @@ const TripHistory = ({ driver = { name: 'John Smith', id: '001' } }) => {
                 placeholder="Search trips..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
+                sx={{ 
+                  '& .MuiOutlinedInput-root': {
+                    borderRadius: 3,
+                    bgcolor: 'white'
+                  }
+                }}
                 InputProps={{
                   startAdornment: (
                     <InputAdornment position="start">
@@ -224,10 +289,14 @@ const TripHistory = ({ driver = { name: 'John Smith', id: '001' } }) => {
                   value={statusFilter}
                   label="Status"
                   onChange={(e) => setStatusFilter(e.target.value)}
+                  sx={{ 
+                    borderRadius: 3,
+                    bgcolor: 'white'
+                  }}
                 >
                   <MenuItem value="all">All Status</MenuItem>
                   <MenuItem value="completed">Completed</MenuItem>
-                  <MenuItem value="in-progress">In Progress</MenuItem>
+                  <MenuItem value="active">Active</MenuItem>
                   <MenuItem value="planned">Planned</MenuItem>
                   <MenuItem value="cancelled">Cancelled</MenuItem>
                 </Select>
@@ -241,6 +310,10 @@ const TripHistory = ({ driver = { name: 'John Smith', id: '001' } }) => {
                   value={sortBy}
                   label="Sort By"
                   onChange={(e) => setSortBy(e.target.value)}
+                  sx={{ 
+                    borderRadius: 3,
+                    bgcolor: 'white'
+                  }}
                 >
                   <MenuItem value="newest">Newest First</MenuItem>
                   <MenuItem value="oldest">Oldest First</MenuItem>
@@ -262,46 +335,74 @@ const TripHistory = ({ driver = { name: 'John Smith', id: '001' } }) => {
         </Box>
 
         {/* Trip Statistics Summary */}
-        <Grid container spacing={2} sx={{ mb: 3 }}>
+        <Grid container spacing={3} sx={{ mb: 4 }}>
           <Grid item xs={6} sm={3}>
-            <Box textAlign="center" p={2} bgcolor="white" borderRadius={2} boxShadow={1}>
-              <Typography variant="h4" color="primary.main" fontWeight="bold">
-                {allTrips.filter(t => t.status === 'completed').length}
+            <Paper sx={{ 
+              textAlign: 'center', 
+              p: 3, 
+              borderRadius: 3, 
+              boxShadow: '0 4px 16px rgba(0,0,0,0.08)',
+              border: '1px solid',
+              borderColor: 'grey.100'
+            }}>
+              <Typography variant="h3" color="primary.main" fontWeight="bold">
+                {stats.completed}
               </Typography>
               <Typography variant="body2" color="text.secondary">
                 Completed
               </Typography>
-            </Box>
+            </Paper>
           </Grid>
           <Grid item xs={6} sm={3}>
-            <Box textAlign="center" p={2} bgcolor="white" borderRadius={2} boxShadow={1}>
-              <Typography variant="h4" color="success.main" fontWeight="bold">
-                {Math.round(allTrips.reduce((sum, trip) => sum + (trip.hoursUsed || 0), 0) * 10) / 10}h
+            <Paper sx={{ 
+              textAlign: 'center', 
+              p: 3, 
+              borderRadius: 3, 
+              boxShadow: '0 4px 16px rgba(0,0,0,0.08)',
+              border: '1px solid',
+              borderColor: 'grey.100'
+            }}>
+              <Typography variant="h3" color="success.main" fontWeight="bold">
+                {stats.totalHours}h
               </Typography>
               <Typography variant="body2" color="text.secondary">
                 Total Hours
               </Typography>
-            </Box>
+            </Paper>
           </Grid>
           <Grid item xs={6} sm={3}>
-            <Box textAlign="center" p={2} bgcolor="white" borderRadius={2} boxShadow={1}>
-              <Typography variant="h4" color="warning.main" fontWeight="bold">
-                {allTrips.reduce((sum, trip) => sum + parseInt(trip.distance || '0'), 0).toLocaleString()}
+            <Paper sx={{ 
+              textAlign: 'center', 
+              p: 3, 
+              borderRadius: 3, 
+              boxShadow: '0 4px 16px rgba(0,0,0,0.08)',
+              border: '1px solid',
+              borderColor: 'grey.100'
+            }}>
+              <Typography variant="h3" color="warning.main" fontWeight="bold">
+                {stats.totalMiles.toLocaleString()}
               </Typography>
               <Typography variant="body2" color="text.secondary">
                 Total Miles
               </Typography>
-            </Box>
+            </Paper>
           </Grid>
           <Grid item xs={6} sm={3}>
-            <Box textAlign="center" p={2} bgcolor="white" borderRadius={2} boxShadow={1}>
-              <Typography variant="h4" color="info.main" fontWeight="bold">
-                {Math.round((allTrips.filter(t => t.complianceStatus === 'good').length / allTrips.filter(t => t.status === 'completed').length) * 100)}%
+            <Paper sx={{ 
+              textAlign: 'center', 
+              p: 3, 
+              borderRadius: 3, 
+              boxShadow: '0 4px 16px rgba(0,0,0,0.08)',
+              border: '1px solid',
+              borderColor: 'grey.100'
+            }}>
+              <Typography variant="h3" color="info.main" fontWeight="bold">
+                {stats.complianceRate}%
               </Typography>
               <Typography variant="body2" color="text.secondary">
                 Compliance Rate
               </Typography>
-            </Box>
+            </Paper>
           </Grid>
         </Grid>
 
@@ -312,9 +413,11 @@ const TripHistory = ({ driver = { name: 'John Smith', id: '001' } }) => {
           onDeleteTrip={handleDeleteTrip}
           title={`Trip History (${filteredTrips.length} trips)`}
           emptyMessage={
-            searchTerm || statusFilter !== 'all' 
-              ? 'No trips match your current filters'
-              : 'No trips found'
+            trips.length === 0 
+              ? 'No trips found. Start by planning your first trip!'
+              : searchTerm || statusFilter !== 'all' 
+                ? 'No trips match your current filters'
+                : 'No trips found'
           }
         />
       </Container>
