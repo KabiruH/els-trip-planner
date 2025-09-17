@@ -7,9 +7,14 @@ import {
   Container,
   Paper,
   ThemeProvider,
-  createTheme
+  createTheme,
+  Grid,
+  Divider,
+  Chip,
+  IconButton
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import { ContentCopy, AccountCircle, Lock } from '@mui/icons-material';
 import LoginForm from '../components/auth/LoginForm';
 import { authService, apiUtils } from '../services/api';
 
@@ -55,14 +60,41 @@ const FullPageContainer = styled(Box)(({ theme }) => ({
   },
 }));
 
-const ContentContainer = styled(Container)(({ theme }) => ({
+const MainContainer = styled(Container)(({ theme }) => ({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  maxWidth: '1200px !important',
+  padding: '40px',
+  position: 'relative',
+  zIndex: 1,
+  gap: '40px',
+  [theme.breakpoints.down('lg')]: {
+    flexDirection: 'column',
+    gap: '30px',
+  },
+}));
+
+const ContentContainer = styled(Box)(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
-  maxWidth: '450px !important',
-  padding: '60px 40px',
-  position: 'relative',
-  zIndex: 1,
+  maxWidth: '450px',
+  width: '100%',
+}));
+
+const DemoCredentialsContainer = styled(Paper)(({ theme }) => ({
+  background: 'rgba(255, 255, 255, 0.1)',
+  borderRadius: '20px',
+  padding: '32px',
+  backdropFilter: 'blur(15px)',
+  border: '1px solid rgba(255, 255, 255, 0.2)',
+  boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
+  maxWidth: '350px',
+  width: '100%',
+  [theme.breakpoints.down('lg')]: {
+    maxWidth: '450px',
+  },
 }));
 
 const TruckIcon = styled(Typography)(({ theme }) => ({
@@ -81,6 +113,9 @@ const Title = styled(Typography)(({ theme }) => ({
   letterSpacing: '-0.025em',
   textShadow: '0 2px 8px rgba(0, 0, 0, 0.2)',
   textAlign: 'center',
+  [theme.breakpoints.down('sm')]: {
+    fontSize: '2.5rem',
+  },
 }));
 
 const Subtitle = styled(Typography)(({ theme }) => ({
@@ -141,9 +176,27 @@ const CopyrightText = styled(Typography)(({ theme }) => ({
   opacity: 0.7,
 }));
 
+const CredentialBox = styled(Box)(({ theme }) => ({
+  background: 'rgba(255, 255, 255, 0.1)',
+  borderRadius: '12px',
+  padding: '16px',
+  marginBottom: '16px',
+  border: '1px solid rgba(255, 255, 255, 0.2)',
+  transition: 'all 0.2s ease',
+  '&:hover': {
+    background: 'rgba(255, 255, 255, 0.15)',
+  },
+}));
+
 const LoginPage = ({ onLogin }) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [copiedField, setCopiedField] = useState(null);
+
+  const demoCredentials = {
+    email: 'kelkab46@gmail.com',
+    password: 'password'
+  };
 
   const handleLogin = async (formData) => {
     setLoading(true);
@@ -173,6 +226,16 @@ const LoginPage = ({ onLogin }) => {
     }
   };
 
+  const handleCopyCredential = async (field, value) => {
+    try {
+      await navigator.clipboard.writeText(value);
+      setCopiedField(field);
+      setTimeout(() => setCopiedField(null), 2000);
+    } catch (err) {
+      console.error('Failed to copy:', err);
+    }
+  };
+
   const handleRegisterClick = () => {
     // You can implement navigation to register page here
     console.log('Navigate to register page');
@@ -181,38 +244,197 @@ const LoginPage = ({ onLogin }) => {
   return (
     <ThemeProvider theme={theme}>
       <FullPageContainer>
-        <ContentContainer>
-          <TruckIcon component="div">🚛</TruckIcon>
-          <Title variant="h1">ELD Trip Planner</Title>
-          <Subtitle>
-            Smart route planning with HOS compliance
-          </Subtitle>
-          
-          <FormPaper elevation={0}>
-            <LoginForm
-              onLogin={handleLogin}
-              loading={loading}
-              error={error}
-            />
-          </FormPaper>
-          
-          <RegisterButton
-            variant="outlined"
-            onClick={handleRegisterClick}
-            fullWidth={false}
-          >
-            New Driver? Register Here
-          </RegisterButton>
-          
-          <Box>
-            <FooterText>
-              Professional Electronic Logging Device Solution
-            </FooterText>
-            <CopyrightText>
-              © 2025 ELD Trip Planner
-            </CopyrightText>
-          </Box>
-        </ContentContainer>
+        <MainContainer>
+          {/* Main Login Section */}
+          <ContentContainer>
+            <TruckIcon component="div">🚛</TruckIcon>
+            <Title variant="h1">ELD Trip Planner</Title>
+            <Subtitle>
+              Smart route planning with HOS compliance
+            </Subtitle>
+            
+            <FormPaper elevation={0}>
+              <LoginForm
+                onLogin={handleLogin}
+                loading={loading}
+                error={error}
+              />
+            </FormPaper>
+            
+            <RegisterButton
+              variant="outlined"
+              onClick={handleRegisterClick}
+              fullWidth={false}
+            >
+              New Driver? Register Here
+            </RegisterButton>
+            
+            <Box>
+              <FooterText>
+                Professional Electronic Logging Device Solution
+              </FooterText>
+              <CopyrightText>
+                © 2025 ELD Trip Planner
+              </CopyrightText>
+            </Box>
+          </ContentContainer>
+
+          {/* Demo Credentials Section */}
+          <DemoCredentialsContainer elevation={0}>
+            <Box sx={{ textAlign: 'center', mb: 3 }}>
+              <Typography 
+                variant="h5" 
+                sx={{ 
+                  color: 'white', 
+                  fontWeight: 700, 
+                  mb: 1,
+                  textShadow: '0 2px 4px rgba(0, 0, 0, 0.2)'
+                }}
+              >
+                🎯 Demo Account
+              </Typography>
+              <Typography 
+                variant="body2" 
+                sx={{ 
+                  color: 'rgba(255, 255, 255, 0.8)',
+                  mb: 2 
+                }}
+              >
+                Use these credentials for testing
+              </Typography>
+              <Chip 
+                label="Interview Demo" 
+                size="small"
+                sx={{ 
+                  bgcolor: 'rgba(255, 255, 255, 0.2)',
+                  color: 'white',
+                  fontWeight: 600
+                }}
+              />
+            </Box>
+
+            <Divider sx={{ bgcolor: 'rgba(255, 255, 255, 0.2)', mb: 3 }} />
+
+            {/* Email Credential */}
+            <CredentialBox>
+              <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
+                <AccountCircle sx={{ color: 'rgba(255, 255, 255, 0.7)', mr: 1, fontSize: 20 }} />
+                <Typography 
+                  variant="body2" 
+                  sx={{ 
+                    color: 'rgba(255, 255, 255, 0.8)',
+                    fontWeight: 600
+                  }}
+                >
+                  Email Address
+                </Typography>
+              </Box>
+              <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                <Typography 
+                  variant="body1" 
+                  sx={{ 
+                    color: 'white',
+                    fontWeight: 500,
+                    fontFamily: 'monospace',
+                    fontSize: '0.9rem'
+                  }}
+                >
+                  {demoCredentials.email}
+                </Typography>
+                <IconButton
+                  size="small"
+                  onClick={() => handleCopyCredential('email', demoCredentials.email)}
+                  sx={{ 
+                    color: copiedField === 'email' ? '#4ade80' : 'rgba(255, 255, 255, 0.7)',
+                    '&:hover': { bgcolor: 'rgba(255, 255, 255, 0.1)' }
+                  }}
+                >
+                  <ContentCopy fontSize="small" />
+                </IconButton>
+              </Box>
+              {copiedField === 'email' && (
+                <Typography variant="caption" sx={{ color: '#4ade80', mt: 0.5, display: 'block' }}>
+                  Copied! ✓
+                </Typography>
+              )}
+            </CredentialBox>
+
+            {/* Password Credential */}
+            <CredentialBox>
+              <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
+                <Lock sx={{ color: 'rgba(255, 255, 255, 0.7)', mr: 1, fontSize: 20 }} />
+                <Typography 
+                  variant="body2" 
+                  sx={{ 
+                    color: 'rgba(255, 255, 255, 0.8)',
+                    fontWeight: 600
+                  }}
+                >
+                  Password
+                </Typography>
+              </Box>
+              <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                <Typography 
+                  variant="body1" 
+                  sx={{ 
+                    color: 'white',
+                    fontWeight: 500,
+                    fontFamily: 'monospace',
+                    fontSize: '0.9rem'
+                  }}
+                >
+                  {demoCredentials.password}
+                </Typography>
+                <IconButton
+                  size="small"
+                  onClick={() => handleCopyCredential('password', demoCredentials.password)}
+                  sx={{ 
+                    color: copiedField === 'password' ? '#4ade80' : 'rgba(255, 255, 255, 0.7)',
+                    '&:hover': { bgcolor: 'rgba(255, 255, 255, 0.1)' }
+                  }}
+                >
+                  <ContentCopy fontSize="small" />
+                </IconButton>
+              </Box>
+              {copiedField === 'password' && (
+                <Typography variant="caption" sx={{ color: '#4ade80', mt: 0.5, display: 'block' }}>
+                  Copied! ✓
+                </Typography>
+              )}
+            </CredentialBox>
+
+            <Box 
+              sx={{ 
+                textAlign: 'center',
+                mt: 3,
+                p: 2,
+                bgcolor: 'rgba(255, 255, 255, 0.05)',
+                borderRadius: 2,
+                border: '1px solid rgba(255, 255, 255, 0.1)'
+              }}
+            >
+              <Typography 
+                variant="body2" 
+                sx={{ 
+                  color: 'rgba(255, 255, 255, 0.9)',
+                  fontWeight: 500,
+                  mb: 0.5
+                }}
+              >
+                💡 Quick Tip
+              </Typography>
+              <Typography 
+                variant="caption" 
+                sx={{ 
+                  color: 'rgba(255, 255, 255, 0.7)',
+                  lineHeight: 1.4
+                }}
+              >
+                Click the copy icons to quickly paste credentials into the login form
+              </Typography>
+            </Box>
+          </DemoCredentialsContainer>
+        </MainContainer>
       </FullPageContainer>
     </ThemeProvider>
   );
