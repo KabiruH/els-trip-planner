@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 
 const LoginForm = ({ onLogin, loading = false, error = null }) => {
   const [formData, setFormData] = useState({
-    email: '',  // Changed from driverId to email
+    email: '',  
     password: ''
   });
   const [showPassword, setShowPassword] = useState(false);

@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 // Base configuration
-const BASE_URL = 'http://127.0.0.1:8000/api/v1';
+const BASE_URL = 'https://els-trip-planner.onrender.com/api/v1';
 
 // Create axios instance with default config
 const api = axios.create({
